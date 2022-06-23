@@ -10,7 +10,7 @@ namespace Conti.Tom.Publishing.Application
             try
             {
                 TestBooksService();
-                TestPublisher();
+                //TestPublisher();
                 Console.ReadKey();
             }
 
