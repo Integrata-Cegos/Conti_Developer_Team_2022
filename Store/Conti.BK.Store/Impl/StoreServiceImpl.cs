@@ -1,7 +1,6 @@
 using Conti.BK.Store.API;
 namespace Conti.BK.Store.Impl{
     public class StoreService : IStoreService{
-        public class StoreService : IStoreService{
         public class StoreEntry{
             public StoreEntry(string cat, Object item){
                 if (cat == null){
@@ -15,10 +14,12 @@ namespace Conti.BK.Store.Impl{
             }
             private string _category;
             private Object _item;
+
             public override int GetHashCode()
             {
                 return _category.GetHashCode() + _item.GetHashCode();
             }
+
             public override bool Equals(object? obj)
             {
                 if (obj != null){
@@ -37,23 +38,17 @@ namespace Conti.BK.Store.Impl{
         }
 
         public int GetStock(string category, Object item){
-            try{
-                int stock = _stock[new StoreEntry(category, item)];
-                int stock = 0;
-                bool hasStock = _stock.TryGetValue(new StoreEntry(category, item), out stock);
-                if (hasStock)
-                {
-                    return stock;
-                }else
-                {
-                    return 0;
-                }
+            int stock = 0;
+            bool hasStock = _stock.TryGetValue(new StoreEntry(category, item), out stock);
+            if (hasStock)
+            {
+                return stock;
+            }else
+            {
+                return 0;
             }
-            catch(Exception){
-            
-        }
             }
-
+        
 
         public void SetStock(string category, Object item, int stock){
             if (stock < 0){
