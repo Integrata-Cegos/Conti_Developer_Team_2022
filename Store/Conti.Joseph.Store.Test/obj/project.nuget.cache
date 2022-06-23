@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jehnsUnwFApzuhZq93sX9rEwJOiLub46fs4i8+lwCvdGuQxMJ0rZpt/VtmTUQiFvYVoXkAS58swqT6GCcahYRw==",
+  "dgSpecHash": "aCBpLiEb/QjetfBlZCjmMMln8L4Lb4WColFXaP/EPsrR/T94CrFf4eh/MDO7CK8k8yFpQ/BCWzxMY8baszDGew==",
   "success": true,
-  "projectFilePath": "C:\\Programmierübung\\Training\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj",
+  "projectFilePath": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uidg9510\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\uidg9510\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",

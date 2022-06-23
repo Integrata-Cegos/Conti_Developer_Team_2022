@@ -3933,11 +3933,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programmierübung\\Training\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj",
+      "projectUniqueName": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj",
       "projectName": "Conti.Joseph.Store.Test",
-      "projectPath": "C:\\Programmierübung\\Training\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj",
+      "projectPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj",
       "packagesPath": "C:\\Users\\uidg9510\\.nuget\\packages\\",
-      "outputPath": "C:\\Programmierübung\\Training\\Store\\Conti.Joseph.Store.Test\\obj\\",
+      "outputPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\uidg9510\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3953,8 +3953,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Programmierübung\\Training\\Store\\Conti.Joseph.Store\\Conti.Joseph.Store.csproj": {
-              "projectPath": "C:\\Programmierübung\\Training\\Store\\Conti.Joseph.Store\\Conti.Joseph.Store.csproj"
+            "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store\\Conti.Joseph.Store.csproj": {
+              "projectPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store\\Conti.Joseph.Store.csproj"
             }
           }
         }
