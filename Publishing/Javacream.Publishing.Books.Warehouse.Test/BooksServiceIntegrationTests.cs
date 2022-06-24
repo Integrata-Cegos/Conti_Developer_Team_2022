@@ -10,11 +10,11 @@ using Javacream.Store.Impl;
 namespace Javacream.Publishing.Books.Warehouse.Test;
 
 
-static class TestContext
+static class IntegrationTestContext
 {
     private static IBooksService _booksService;
 
-    static TestContext(){
+    static IntegrationTestContext(){
         var randomIsbnService = new RandomIsbnService();
         randomIsbnService.Prefix = "Test-ISBN";
         randomIsbnService.CountryCode = "-dk";
@@ -35,7 +35,7 @@ public class CreateBookTests
     [SetUp]
     public void Setup()
     {
-        _booksService = TestContext.IBooksService();
+        _booksService = IntegrationTestContext.IBooksService();
     }
 
     [Test]
