@@ -15,6 +15,22 @@ namespace ContiLS.Books.Impl
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
         public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
+            if (title == null)
+            {
+                throw new ArgumentException("null title");
+            }
+            if (pages <= 0 )
+            {
+                throw new ArgumentException("invalid pages");
+            }
+            if (price < 0 )
+            {
+                throw new ArgumentException("invalid price");
+            }
+            if (options == null)
+            {
+                throw new ArgumentException("null options");
+            }
             bool available = false;
             Isbn isbn = this._isbnService.Next();
             Book newBook;
