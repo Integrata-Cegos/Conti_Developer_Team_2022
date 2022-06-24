@@ -8,18 +8,22 @@ using Javacream.Store.API;
 namespace Javacream.Publishing.Books.Warehouse.Test;
 
 
-private class IsbnServiceDummy : IIsbnService
+class IsbnServiceDummy : IIsbnService
 {
     public Isbn Next()
     {
         return new Isbn(1,2,3,4);
     }
 }
-private class StoreServiceDummy : IStoreService
+class StoreServiceDummy : IStoreService
 {
-    public int GetStock(string category, string item)
+    public int GetStock(string category, Object item)
     {
         return 42;
+    }
+    public void SetStock(string category, Object item, int stock)
+    {
+        //NOP
     }
 }
 
@@ -36,7 +40,7 @@ static class UnitTestContext
     }  
 
 }
-public class CreateBookTests
+public class CreateBookUnitTests
 {
     private IBooksService _booksService;
     [SetUp]
