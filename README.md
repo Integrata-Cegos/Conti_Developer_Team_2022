@@ -10,6 +10,7 @@
     
 * Digitales Flipchart
   * https://docs.google.com/presentation/d/1poc2R5FUw8auH6l3fJuH-4JDB5i9XBdoY4PiCQrmAsI/edit?usp=sharing
+  * https://docs.google.com/presentation/d/1TcEjyEeAZk95mVC2G4PMf3agRx43XpoqTcdScUjmDBM/edit?usp=sharing
   
 * Seminarzeiten
   * 4 Einheiten pro Tag, je Unterrichtseinheit etwa 90 Minuten
