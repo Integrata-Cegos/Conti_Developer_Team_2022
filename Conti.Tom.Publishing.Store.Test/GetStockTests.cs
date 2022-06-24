@@ -2,7 +2,7 @@ using Conti.Tom.Publishing.Store;
 
 namespace Conti.Tom.Publishing.Store.Test
 {
-    [TestFixture]
+    [TestFixture(Author = "Conti Tom")]
     public class GetStockTests
     {
 
