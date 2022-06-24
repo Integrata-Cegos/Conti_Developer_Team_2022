@@ -3,45 +3,28 @@ using Javacream.Books.API;
 using Javacream.Books.Impl;
 using Javacream.IsbnGenerator.API;
 using Javacream.Store.API;
-
+using Moq;
 
 namespace Javacream.Publishing.Books.Warehouse.Test;
-
-
-class IsbnServiceDummy : IIsbnService
-{
-    public Isbn Next()
-    {
-        return new Isbn(1,2,3,4);
-    }
-}
-class StoreServiceDummy : IStoreService
-{
-    public int GetStock(string category, Object item)
-    {
-        return 42;
-    }
-    public void SetStock(string category, Object item, int stock)
-    {
-        //NOP
-    }
-}
-
-static class UnitTestContext
+static class UnitTestMoqContext
 {
     public static IBooksService IBooksService(){
-        var booksService = new BooksService(new IsbnServiceDummy(), new StoreServiceDummy());
+        var iss = new Mock<IStoreService>();
+        iss.Setup(storeService => storeService.GetStock("books", "Isbn1")).Returns(42);
+        var iis = new Mock<IIsbnService>();
+        iis.Setup(o => o.Next()).Returns(new Isbn(1,2,3,4));
+        var booksService = new BooksService(iis.Object, iss.Object);
         return booksService;
     }  
 
 }
-public class CreateBookUnitTests
+public class CreateBookUnitMoqTests
 {
     private IBooksService _booksService;
     [SetUp]
     public void Setup()
     {
-        _booksService = UnitTestContext.IBooksService();
+        _booksService = UnitTestMoqContext.IBooksService();
     }
 
     [Test]
