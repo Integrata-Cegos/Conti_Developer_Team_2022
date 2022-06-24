@@ -1,0 +1,12 @@
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.csproj.AssemblyReference.cache
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.AssemblyInfoInputs.cache
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.AssemblyInfo.cs
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.csproj.CoreCompileInputs.cache
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\bin\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.deps.json
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\bin\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\bin\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.pdb
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\refint\Conti.Guido.Publishing.Books.IsbnGenerator.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.pdb
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.IsbnGenerator\obj\Debug\net6.0\ref\Conti.Guido.Publishing.Books.IsbnGenerator.dll

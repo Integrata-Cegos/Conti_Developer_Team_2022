@@ -1,0 +1,12 @@
+D:\Git\Conti_Developer_Team\Utilities\bin\Debug\net6.0\Conti.Guido.Utilities.deps.json
+D:\Git\Conti_Developer_Team\Utilities\bin\Debug\net6.0\Conti.Guido.Utilities.dll
+D:\Git\Conti_Developer_Team\Utilities\bin\Debug\net6.0\Conti.Guido.Utilities.pdb
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\Conti.Guido.Utilities.csproj.AssemblyReference.cache
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\Conti.Guido.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\Conti.Guido.Utilities.AssemblyInfoInputs.cache
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\Conti.Guido.Utilities.AssemblyInfo.cs
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\Conti.Guido.Utilities.csproj.CoreCompileInputs.cache
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\Conti.Guido.Utilities.dll
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\refint\Conti.Guido.Utilities.dll
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\Conti.Guido.Utilities.pdb
+D:\Git\Conti_Developer_Team\Utilities\obj\Debug\net6.0\ref\Conti.Guido.Utilities.dll
