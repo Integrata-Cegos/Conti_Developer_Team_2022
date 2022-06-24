@@ -1,4 +1,5 @@
 ﻿using Conti.Tom.Publishing.Books.IsbnGenerator;
+using Conti.Tom.Publishing.Books.IsbnGenerator.Models;
 using Conti.Tom.Publishing.Books.Warehouse.Models;
 
 namespace Conti.Tom.Publishing.Application

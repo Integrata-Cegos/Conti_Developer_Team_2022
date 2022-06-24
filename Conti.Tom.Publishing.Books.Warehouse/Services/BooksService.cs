@@ -1,8 +1,12 @@
 ﻿using Conti.Tom.Publishing.Books.IsbnGenerator;
+using Conti.Tom.Publishing.Books.IsbnGenerator.Interfaces;
+using Conti.Tom.Publishing.Books.IsbnGenerator.Models;
+using Conti.Tom.Publishing.Books.IsbnGenerator.Services;
+using Conti.Tom.Publishing.Books.Warehouse.Interfaces;
 using Conti.Tom.Publishing.Books.Warehouse.Models;
 using Conti.Tom.Publishing.Store;
 
-namespace Conti.Tom.Publishing.Books.Warehouse
+namespace Conti.Tom.Publishing.Books.Warehouse.Services
 {
     public class BooksService : IBooksService
     {
