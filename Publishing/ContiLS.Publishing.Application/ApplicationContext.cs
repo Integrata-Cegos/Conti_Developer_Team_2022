@@ -4,10 +4,14 @@ using ContiLS.Store.API;
 using ContiLS.Store.Impl;
 using ContiLS.Books.API;
 using ContiLS.Books.Impl;
+using ContiLS.Util;
 
 public static class ApplicationContext{
     static ApplicationContext(){
-        _isbnService = new RandomIsbnService();
+        RandomIsbnService randomIsbnService = new RandomIsbnService();
+        randomIsbnService.Prefix = Configuration.GetConfiguration("isbn.prefix");
+        randomIsbnService.CountryCode = Configuration.GetConfiguration("isbn.countryCode");
+        _isbnService = randomIsbnService;
         _storeService = new StoreService();
         _storeService.SetStock("books", new Isbn(4,5,6,7), 100);
         _storeService.SetStock("books", new Isbn(4,5,6,8), 10);
