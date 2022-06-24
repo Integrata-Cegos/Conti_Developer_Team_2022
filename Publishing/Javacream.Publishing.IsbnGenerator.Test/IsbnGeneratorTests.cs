@@ -7,11 +7,16 @@ namespace Javacream.Publishing.IsbnGenerator.Test;
 
 public class NextTests
 {
+    private string ISBN= "Test-Isbn";
+    private string CountryCode = "-test";
     private IIsbnService? _isbnGenerator;
     [SetUp]
     public void Setup()
     {
-        _isbnGenerator = new CounterIsbnService();
+        CounterIsbnService isbnService = new CounterIsbnService();
+        isbnService.Prefix = ISBN;
+        isbnService.CountryCode = CountryCode;
+        _isbnGenerator = isbnService;
     }
 
     [Test]
@@ -27,4 +32,13 @@ public class NextTests
         Isbn isbn2 = _isbnGenerator.Next();
         Assert.AreNotEqual(isbn1, isbn2);
     }
+
+    [Test]
+    public void GeneratedIsbnStartsWithTestIsbn()
+    {
+        Isbn isbn = _isbnGenerator.Next();
+        string isbnAsString = isbn.ToString();
+        Assert.True(isbnAsString.StartsWith(ISBN));
+    }
+
 }

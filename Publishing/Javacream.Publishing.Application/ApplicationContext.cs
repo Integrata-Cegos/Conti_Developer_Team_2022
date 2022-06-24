@@ -4,10 +4,13 @@ using Javacream.Store.API;
 using Javacream.Store.Impl;
 using Javacream.Books.API;
 using Javacream.Books.Impl;
-
+using Javacream.Util;
 public static class ApplicationContext{
     static ApplicationContext(){
-        _isbnService = new RandomIsbnService();
+        RandomIsbnService randomIsbnService = new RandomIsbnService();
+        randomIsbnService.Prefix = Configuration.GetConfiguration("isbn.prefix");
+        randomIsbnService.CountryCode = Configuration.GetConfiguration("isbn.counryCode");
+        _isbnService = randomIsbnService;
         _storeService = new StoreService();
         _storeService.SetStock("books", new Isbn(4,5,6,7), 100);
         _storeService.SetStock("books", new Isbn(4,5,6,8), 10);
