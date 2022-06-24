@@ -4,7 +4,7 @@ using Conti.BK.Store.Impl;
 using System;
 namespace Conti.BK.Store.Test;
 
-public class StockTests
+public class GetStockTests
 {
     private IStoreService? _storeService; 
     [SetUp]
@@ -62,6 +62,12 @@ public class SetStockTests
     public void SetStockWithNullItemThrowsArgumentException()
     {
         Assert.Throws<ArgumentException>(() => _storeService.SetStock("cat", null, 42));
+    }
+    [Test]
+    public void SetStockAndTestIfStockIsSet(){
+        _storeService.SetStock("cat","Isbn17", 22);
+        int stock = _storeService.GetStock("cat", "Isbn17");
+        Assert.AreEqual(22, stock);
     }
 
 }
