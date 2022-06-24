@@ -1,0 +1,12 @@
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\bin\Debug\net6.0\Conti.Guido.Store.deps.json
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\bin\Debug\net6.0\Conti.Guido.Store.dll
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\bin\Debug\net6.0\Conti.Guido.Store.pdb
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\Conti.Guido.Store.csproj.AssemblyReference.cache
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\Conti.Guido.Store.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\Conti.Guido.Store.AssemblyInfoInputs.cache
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\Conti.Guido.Store.AssemblyInfo.cs
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\Conti.Guido.Store.csproj.CoreCompileInputs.cache
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\Conti.Guido.Store.dll
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\refint\Conti.Guido.Store.dll
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\Conti.Guido.Store.pdb
+D:\Git\Conti_Developer_Team\Store\Conti.Guido.Store\obj\Debug\net6.0\ref\Conti.Guido.Store.dll
