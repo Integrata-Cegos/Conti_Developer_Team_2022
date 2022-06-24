@@ -65,5 +65,15 @@ public class SetStockTests
     {
         Assert.Throws<ArgumentException>(() => _storeService.SetStock("cat", null, 42));
     }
+    [Test]
+    public void SetStockWithCategoryBooksAndItemIsbn1AndStock42CreatesEntry()
+    {
+        int expected = 42;
+        string category = "Books";
+        string item ="Isbn1";
+        _storeService.SetStock(category, item, expected);
+        int stock = _storeService.GetStock(category, item);
+        Assert.AreEqual(expected,stock);
+    }
 
 }
