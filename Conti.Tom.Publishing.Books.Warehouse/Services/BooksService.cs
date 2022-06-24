@@ -20,31 +20,47 @@ namespace Conti.Tom.Publishing.Books.Warehouse.Services
         }
 
         private Dictionary<ISBN, Book> _books = new Dictionary<ISBN, Book>();
-        public Book CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
+        public ISBN CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
-            bool bookavailable = false;
+            if (title == null)
+            {
+                throw new ArgumentException("null title");
+            }
+            if (pages <= 0)
+            {
+                throw new ArgumentException("invalid pages");
+            }
+            if (price < 0)
+            {
+                throw new ArgumentException("invalid price");
+            }
+            if (options == null)
+            {
+                throw new ArgumentException("null options");
+            }
+            bool available = false;
             ISBN isbn = _ISBNService.Next();
             Book newBook;
             try
             {
-                string topic = options["topic"].ToString();
-                newBook = new SpecialistBook(isbn, title, pages, price, bookavailable, topic);
+                string? topic = options["topic"].ToString();
+                newBook = new SpecialistBook(isbn, title, pages, price, available, topic!);
             }
             catch (Exception)
             {
                 try
                 {
-                    string subject = options["subject"].ToString();
+                    string? subject = options["subject"].ToString();
                     int year = (int)options["year"];
-                    newBook = new SchoolBook(isbn, title, pages, price, bookavailable, subject, year);
+                    newBook = new SchoolBook(isbn, title, pages, price, available, year, subject!);
                 }
                 catch (Exception)
                 {
-                    newBook = new Book(isbn, title, pages, price, bookavailable);
+                    newBook = new Book(isbn, title, pages, price, available);
                 }
             }
             this._books.Add(isbn, newBook);
-            return newBook;
+            return isbn;
         }
 
         public Book FindBookByIsbn(ISBN isbn)

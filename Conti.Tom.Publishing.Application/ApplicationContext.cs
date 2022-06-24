@@ -11,7 +11,7 @@ namespace Conti.Tom.Publishing.Application
 {
     public static class ApplicationContext
     {
-        private static IISBNService _ISBNService;
+        private static RandomISBNService _ISBNService;
         private static IStoreService _StoreService;
         private static IBooksService _BooksService;
         private static IConfigurationService _ConfigurationService;
@@ -19,7 +19,7 @@ namespace Conti.Tom.Publishing.Application
         static ApplicationContext()
         {
             _ConfigurationService = new ConfigurationService();
-            _ISBNService = new RandomISBNService();
+            var _ISBNService = new RandomISBNService();
             _ISBNService.Prefix = _ConfigurationService.GetConfiguration("isbn.prefix");
             _ISBNService.CountryCode = _ConfigurationService.GetConfiguration("isbn.countryCode");
             _StoreService = new StoreService();

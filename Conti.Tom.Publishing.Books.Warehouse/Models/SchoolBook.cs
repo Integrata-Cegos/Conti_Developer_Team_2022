@@ -7,7 +7,7 @@ namespace Conti.Tom.Publishing.Books.Warehouse.Models
         public string Subject { get; }
         public int Year { get; }
 
-        public SchoolBook(ISBN isbn, string title, int pages, double price, bool available, string subject, int year) : base(isbn, title, pages, price, available)
+        public SchoolBook(ISBN isbn, string title, int pages, double price, bool available, int year, string subject ) : base(isbn, title, pages, price, available)
         {
             Subject = subject;
             Year = year;

@@ -2,14 +2,13 @@
 using Conti.Tom.Publishing.Books.IsbnGenerator.Models;
 using Conti.Tom.Publishing.Books.Warehouse.Models;
 
-namespace Conti.Tom.Publishing.Books.Warehouse.Interfaces
+namespace Conti.Tom.Publishing.Books.Warehouse.Interfaces;
+
+public interface IBooksService
 {
-    public interface IBooksService
-    {
-        Book CreateBook(string title, int pages, double price, Dictionary<string, object> options);
-        void DeleteBookByIsbn(ISBN isbn);
-        Book FindBookByIsbn(ISBN isbn);
-        List<Book> FindBooksByPriceRange(double min, double max);
-        List<Book> FindBooksByTitle(string title);
-    }
+    ISBN CreateBook(string title, int pages, double price, Dictionary<string, object> options);
+    void DeleteBookByIsbn(ISBN isbn);
+    Book FindBookByIsbn(ISBN isbn);
+    List<Book> FindBooksByPriceRange(double min, double max);
+    List<Book> FindBooksByTitle(string title);
 }

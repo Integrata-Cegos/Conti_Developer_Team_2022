@@ -71,7 +71,7 @@ namespace Conti.Tom.Publishing.Application
         }
         public static SchoolBook CreateDefaultSchoolBook()
         {
-            return new SchoolBook(new ISBN(1, 2, 3, 5), "Title 2", 120, 29.99, true, "physics", 2010);
+            return new SchoolBook(new ISBN(1, 2, 3, 5), "Title 2", 120, 29.99, true, 2010, "physics");
         }
         public static SpecialistBook CreateDefaultSpecialistBook()
         {

@@ -22,6 +22,11 @@
             this._prefix = prefix;
         }
 
+        public virtual string Info()
+        {
+            return ToString();
+        }
+
         public override bool Equals(object? obj)
         {
             if (obj == null)

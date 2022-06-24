@@ -18,6 +18,7 @@ namespace Conti.Tom.Publishing.Books.Warehouse.Models
                 }
                 else
                 {
+                    //Title = "";
                     throw new ArgumentException("Title has to be at least 2 Characters long....");
                 }
 
