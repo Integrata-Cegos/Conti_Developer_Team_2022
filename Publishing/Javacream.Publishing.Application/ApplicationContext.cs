@@ -9,7 +9,7 @@ public static class ApplicationContext{
     static ApplicationContext(){
         RandomIsbnService randomIsbnService = new RandomIsbnService();
         randomIsbnService.Prefix = Configuration.GetConfiguration("isbn.prefix");
-        randomIsbnService.CountryCode = Configuration.GetConfiguration("isbn.counryCode");
+        randomIsbnService.CountryCode = Configuration.GetConfiguration("isbn.countryCode");
         _isbnService = randomIsbnService;
         _storeService = new StoreService();
         _storeService.SetStock("books", new Isbn(4,5,6,7), 100);
