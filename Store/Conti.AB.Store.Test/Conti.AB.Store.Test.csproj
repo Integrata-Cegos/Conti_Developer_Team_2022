@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Javacream.Store\Javacream.Store.csproj" />
+    <ProjectReference Include="..\Conti.AB.Store\Conti.AB.Store.csproj" />
   </ItemGroup>
 
 </Project>

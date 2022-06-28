@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using Javacream.Store.API;
-using Javacream.Store.Impl;
-namespace Javacream.Store.Test;
+using Conti.AB.Store.API;
+using Conti.AB.Store.Impl;
+namespace Conti.AB.Store.Test;
 
 public class GetStockTests
 {

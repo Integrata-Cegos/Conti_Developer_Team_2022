@@ -5,9 +5,9 @@
     "\\Publishing\\Javacream.Publishing.Application",
     "\\Publishing\\Javacream.Publishing.Books.Warehouse",
     "\\Publishing\\Javacream.Publishing.Books.Warehouse.Test",
-    "\\Utilities",
+    "\\Store",
     "\\Utilities\\Conti.AB.Utilities"
   ],
-  "SelectedNode": "\\Utilities",
+  "SelectedNode": "\\Store",
   "PreviewInSolutionExplorer": false
 }

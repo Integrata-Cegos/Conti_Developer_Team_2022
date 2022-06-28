@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Javacream.Store", "Javacream.Store\Javacream.Store.csproj", "{37973203-513C-428A-8DDE-58FE12D94844}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.AB.Store", "Conti.AB.Store\Conti.AB.Store.csproj", "{37973203-513C-428A-8DDE-58FE12D94844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Javacream.Store.Test", "Javacream.Store.Test\Javacream.Store.Test.csproj", "{7BF7BC2D-953B-4F37-8F69-A49500B92561}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.AB.Store.Test", "Conti.AB.Store.Test\Conti.AB.Store.Test.csproj", "{7BF7BC2D-953B-4F37-8F69-A49500B92561}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

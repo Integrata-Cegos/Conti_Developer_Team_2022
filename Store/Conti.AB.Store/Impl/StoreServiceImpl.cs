@@ -1,5 +1,5 @@
-using Javacream.Store.API;
-namespace Javacream.Store.Impl{
+using Conti.AB.Store.API;
+namespace Conti.AB.Store.Impl{
     public class StoreService : IStoreService{
         public class StoreEntry{
             public StoreEntry(string cat, Object item){
