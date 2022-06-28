@@ -2,7 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\Publishing",
-    "\\Store"
+    "\\Publishing\\Conti.AB.Publishing.Application",
+    "\\Publishing\\Conti.AB.Publishing.Books.Warehouse",
+    "\\Publishing\\Conti.AB.Publishing.Books.Warehouse\\Impl",
+    "\\Store",
+    "\\Store\\Conti.AB.Store",
+    "\\Utilities",
+    "\\Utilities\\Conti.AB.Utilities"
   ],
+  "SelectedNode": "\\Publishing\\Conti.AB.Publishing.Books.Warehouse\\Conti.AB.Publishing.Books.Warehouse.csproj",
   "PreviewInSolutionExplorer": false
 }
