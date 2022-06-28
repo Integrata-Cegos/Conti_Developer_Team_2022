@@ -1,4 +1,4 @@
-namespace Javacream.Util
+namespace Conti.AB.Util
 {
 
     public static class Configuration
