@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}Publishing/Publishing.csproj",
+                "${workspaceFolder}/Publishing/Publishing.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}Publishing/Publishing.csproj"
+                "${workspaceFolder}/Publishing/Publishing.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
