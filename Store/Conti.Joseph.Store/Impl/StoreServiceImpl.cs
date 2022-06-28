@@ -1,8 +1,5 @@
-using Conti.Joseph.IsbnGenerator.API;
 using Conti.Joseph.Store.API;
- 
-namespace Conti.Joseph.Store.Impl
-{
+namespace Conti.Joseph.Store.Impl{
     public class StoreService : IStoreService{
         public class StoreEntry{
             public StoreEntry(string cat, Object item){

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.Joseph.Store.Test", "Conti.Joseph.Store.Test\Conti.Joseph.Store.Test.csproj", "{28A6DB14-CE6E-4CEC-9D7F-08E5CF1F26FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.Joseph.Store", "Conti.Joseph.Store\Conti.Joseph.Store.csproj", "{37973203-513C-428A-8DDE-58FE12D94844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.Joseph.Store.Test", "Conti.Joseph.Store.Test\Conti.Joseph.Store.Test.csproj", "{7BF7BC2D-953B-4F37-8F69-A49500B92561}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +16,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{28A6DB14-CE6E-4CEC-9D7F-08E5CF1F26FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28A6DB14-CE6E-4CEC-9D7F-08E5CF1F26FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28A6DB14-CE6E-4CEC-9D7F-08E5CF1F26FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28A6DB14-CE6E-4CEC-9D7F-08E5CF1F26FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF7BC2D-953B-4F37-8F69-A49500B92561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF7BC2D-953B-4F37-8F69-A49500B92561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF7BC2D-953B-4F37-8F69-A49500B92561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF7BC2D-953B-4F37-8F69-A49500B92561}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

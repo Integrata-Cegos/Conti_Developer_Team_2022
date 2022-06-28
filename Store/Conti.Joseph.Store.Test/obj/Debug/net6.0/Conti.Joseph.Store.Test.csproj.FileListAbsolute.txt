@@ -1,4 +1,9 @@
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.csproj.AssemblyReference.cache
+C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.AssemblyInfoInputs.cache
+C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.AssemblyInfo.cs
+C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.csproj.CoreCompileInputs.cache
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\testhost.dll
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\testhost.exe
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -88,16 +93,7 @@ C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\Conti.Joseph.Store.dll
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\Conti.Joseph.Utilities.dll
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\Publishing.Books.IsbnGenerator.dll
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\Conti.Joseph.Store.pdb
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\Conti.Joseph.Utilities.pdb
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\bin\Debug\net6.0\Publishing.Books.IsbnGenerator.pdb
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.csproj.AssemblyReference.cache
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.GeneratedMSBuildEditorConfig.editorconfig
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.AssemblyInfoInputs.cache
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.AssemblyInfo.cs
-C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.csproj.CoreCompileInputs.cache
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.csproj.CopyComplete
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\Conti.Joseph.Store.Test.dll
 C:\Programm_GIT\Conti_Developer_Team\Store\Conti.Joseph.Store.Test\obj\Debug\net6.0\refint\Conti.Joseph.Store.Test.dll

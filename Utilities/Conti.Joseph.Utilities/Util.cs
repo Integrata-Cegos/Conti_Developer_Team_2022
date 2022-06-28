@@ -1,5 +1,4 @@
 namespace Conti.Joseph.Util
-
 {
 
     public static class Configuration
@@ -89,5 +88,4 @@ namespace Conti.Joseph.Util
             }
         }
     }
-    
 }

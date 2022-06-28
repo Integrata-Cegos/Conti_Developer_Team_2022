@@ -4,63 +4,6 @@
     "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj": {}
   },
   "projects": {
-    "C:\\Programm_GIT\\Conti_Developer_Team\\Publishing\\Publishing.Books.IsbnGenerator\\Publishing.Books.IsbnGenerator.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Programm_GIT\\Conti_Developer_Team\\Publishing\\Publishing.Books.IsbnGenerator\\Publishing.Books.IsbnGenerator.csproj",
-        "projectName": "Publishing.Books.IsbnGenerator",
-        "projectPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Publishing\\Publishing.Books.IsbnGenerator\\Publishing.Books.IsbnGenerator.csproj",
-        "packagesPath": "C:\\Users\\uidg9510\\.nuget\\packages\\",
-        "outputPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Publishing\\Publishing.Books.IsbnGenerator\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\uidg9510\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "http://h2908727.stratoserver.net:8081/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Programm_GIT\\Conti_Developer_Team\\Utilities\\Conti.Joseph.Utilities\\Conti.Joseph.Utilities.csproj": {
-                "projectPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Utilities\\Conti.Joseph.Utilities\\Conti.Joseph.Utilities.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store.Test\\Conti.Joseph.Store.Test.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -102,11 +45,11 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.11.0, )"
+              "version": "[17.1.0, )"
             },
             "NUnit": {
               "target": "Package",
-              "version": "[3.13.2, )"
+              "version": "[3.13.3, )"
             },
             "NUnit.Analyzers": {
               "target": "Package",
@@ -114,11 +57,11 @@
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.2.1, )"
             },
             "coverlet.collector": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.2, )"
             }
           },
           "imports": [
@@ -141,70 +84,13 @@
       }
     },
     "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store\\Conti.Joseph.Store.csproj": {
-      "version": "1.0.0",
+      "version": "1.1.1",
       "restore": {
         "projectUniqueName": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store\\Conti.Joseph.Store.csproj",
         "projectName": "Conti.Joseph.Store",
         "projectPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store\\Conti.Joseph.Store.csproj",
         "packagesPath": "C:\\Users\\uidg9510\\.nuget\\packages\\",
         "outputPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Store\\Conti.Joseph.Store\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\uidg9510\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "http://h2908727.stratoserver.net:8081/repository/nuget-hosted/": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Programm_GIT\\Conti_Developer_Team\\Publishing\\Publishing.Books.IsbnGenerator\\Publishing.Books.IsbnGenerator.csproj": {
-                "projectPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Publishing\\Publishing.Books.IsbnGenerator\\Publishing.Books.IsbnGenerator.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Programm_GIT\\Conti_Developer_Team\\Utilities\\Conti.Joseph.Utilities\\Conti.Joseph.Utilities.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Programm_GIT\\Conti_Developer_Team\\Utilities\\Conti.Joseph.Utilities\\Conti.Joseph.Utilities.csproj",
-        "projectName": "Conti.Joseph.Utilities",
-        "projectPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Utilities\\Conti.Joseph.Utilities\\Conti.Joseph.Utilities.csproj",
-        "packagesPath": "C:\\Users\\uidg9510\\.nuget\\packages\\",
-        "outputPath": "C:\\Programm_GIT\\Conti_Developer_Team\\Utilities\\Conti.Joseph.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\uidg9510\\AppData\\Roaming\\NuGet\\NuGet.Config"
