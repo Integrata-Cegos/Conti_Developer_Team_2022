@@ -1,10 +1,11 @@
-using Javacream.IsbnGenerator.API;
-using Javacream.IsbnGenerator.Impl;
-using Javacream.Store.API;
-using Javacream.Store.Impl;
-using Javacream.Books.API;
-using Javacream.Books.Impl;
+using Conti.AB.IsbnGenerator.API;
+using Conti.AB.IsbnGenerator.Impl;
+using Conti.AB.Store.API;
+using Conti.AB.Store.Impl;
+using Conti.AB.Books.API;
+using Conti.AB.Books.Impl;
 using Javacream.Util;
+
 public static class ApplicationContext{
     static ApplicationContext(){
         RandomIsbnService randomIsbnService = new RandomIsbnService();

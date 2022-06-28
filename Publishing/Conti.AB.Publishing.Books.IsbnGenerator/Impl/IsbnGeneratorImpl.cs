@@ -1,5 +1,5 @@
-using Javacream.IsbnGenerator.API;
-namespace Javacream.IsbnGenerator.Impl
+using Conti.AB.IsbnGenerator.API;
+namespace Conti.AB.IsbnGenerator.Impl
 {
 
     public abstract class BaseIsbnService:IIsbnService{

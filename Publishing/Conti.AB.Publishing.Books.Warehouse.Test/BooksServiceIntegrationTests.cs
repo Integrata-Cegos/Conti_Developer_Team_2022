@@ -1,13 +1,13 @@
 using NUnit.Framework;
-using Javacream.Books.API;
-using Javacream.Books.Impl;
-using Javacream.IsbnGenerator.API;
-using Javacream.IsbnGenerator.Impl;
-using Javacream.Store.API;
-using Javacream.Store.Impl;
+using Conti.AB.Books.API;
+using Conti.AB.Books.Impl;
+using Conti.AB.IsbnGenerator.API;
+using Conti.AB.IsbnGenerator.Impl;
+using Conti.AB.Store.API;
+using Conti.AB.Store.Impl;
 
 
-namespace Javacream.Publishing.Books.Warehouse.Test;
+namespace Conti.AB.Publishing.Books.Warehouse.Test;
 
 
 static class IntegrationTestContext

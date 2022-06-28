@@ -1,9 +1,9 @@
 using NUnit.Framework;
-using Javacream.IsbnGenerator.API;
-using Javacream.IsbnGenerator.Impl;
+using Conti.AB.IsbnGenerator.API;
+using Conti.AB.IsbnGenerator.Impl;
 
 
-namespace Javacream.Publishing.IsbnGenerator.Test;
+namespace Conti.AB.Publishing.IsbnGenerator.Test;
 
 public class CounterIsbnNextTests
 {

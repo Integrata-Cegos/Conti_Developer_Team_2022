@@ -2,12 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Publishing",
-    "\\Publishing\\Javacream.Publishing.Application",
-    "\\Publishing\\Javacream.Publishing.Books.Warehouse",
-    "\\Publishing\\Javacream.Publishing.Books.Warehouse.Test",
-    "\\Store",
-    "\\Utilities\\Conti.AB.Utilities"
+    "\\Store"
   ],
-  "SelectedNode": "\\Store",
   "PreviewInSolutionExplorer": false
 }

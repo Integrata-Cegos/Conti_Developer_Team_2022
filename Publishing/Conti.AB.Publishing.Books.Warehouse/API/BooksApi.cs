@@ -1,6 +1,6 @@
-using Javacream.IsbnGenerator.API;
+using Conti.AB.IsbnGenerator.API;
 
-namespace Javacream.Books.API
+namespace Conti.AB.Books.API
 {
 
     public class Publisher

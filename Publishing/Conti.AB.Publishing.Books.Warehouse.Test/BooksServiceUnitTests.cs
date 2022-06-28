@@ -1,12 +1,10 @@
 using NUnit.Framework;
-using Javacream.Books.API;
-using Javacream.Books.Impl;
-using Javacream.IsbnGenerator.API;
-using Javacream.Store.API;
+using Conti.AB.Books.API;
+using Conti.AB.Books.Impl;
+using Conti.AB.IsbnGenerator.API;
+using Conti.AB.Store.API;
 
-
-namespace Javacream.Publishing.Books.Warehouse.Test;
-
+namespace Conti.AB.Publishing.Books.Warehouse.Test;
 
 class IsbnServiceDummy : IIsbnService
 {

@@ -1,7 +1,7 @@
-using Javacream.IsbnGenerator.API;
-using Javacream.Store.API;
-using Javacream.Books.API;
-namespace Javacream.Books.Impl
+using Conti.AB.IsbnGenerator.API;
+using Conti.AB.Store.API;
+using Conti.AB.Books.API;
+namespace Conti.AB.Books.Impl
 {
 
     public class BooksService : IBooksService

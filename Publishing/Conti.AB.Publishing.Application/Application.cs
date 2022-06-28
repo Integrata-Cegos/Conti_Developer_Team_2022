@@ -1,6 +1,8 @@
-using Javacream.IsbnGenerator.API;
-using Javacream.Books.API;
+using Conti.AB.IsbnGenerator.API;
+using Conti.AB.Books.API;
+
 public static class Application{
+
 public static Book CreateDefaultBook(){
     return new Book(new Isbn(1,2,3,4), "Title 1", 100, 19.99, true);
 }
@@ -69,10 +71,5 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
         foreach (Book b in springer.GetAllBooks()){
             Console.WriteLine(b.Info());
         }
-
-
-
-
     }
-
 }

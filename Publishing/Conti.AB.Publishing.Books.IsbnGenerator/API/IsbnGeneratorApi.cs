@@ -1,4 +1,4 @@
-namespace Javacream.IsbnGenerator.API{
+namespace Conti.AB.IsbnGenerator.API{
     public class Isbn
     {
         private string _prefix;
