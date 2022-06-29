@@ -2,7 +2,6 @@ using NUnit.Framework;
 using Conti.BK.IsbnGenerator.API;
 using Conti.BK.IsbnGenerator.Impl;
 
-
 namespace Conti.BK.Publishing.Books.IsbnGenerator.Test;
 
 public class CounterIsbnNextTests
