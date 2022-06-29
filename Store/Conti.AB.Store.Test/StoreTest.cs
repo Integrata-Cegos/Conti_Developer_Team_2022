@@ -1,17 +1,18 @@
 using NUnit.Framework;
 using Conti.AB.Store.API;
 using Conti.AB.Store.Impl;
+
 namespace Conti.AB.Store.Test;
 
 public class GetStockTests
 {
     private IStoreService? _storeService; 
+
     [SetUp]
     public void Setup()
     {
         _storeService = new StoreService();    
     }
-
 
     [Test]
     public void GetStockWithCategoryBooksAndItemIsbn1RetrievesStockGreaterThanNull()
@@ -19,6 +20,7 @@ public class GetStockTests
         int stock = _storeService.GetStock("Books", "Isbn1");
         Assert.GreaterOrEqual(0, stock);
     }
+
    [Test]
     public void GetStockWithNullCategoryThrowsArgumentException()
     {
@@ -32,10 +34,10 @@ public class GetStockTests
     }
 }
 
-
 public class SetStockTests
 {
     private IStoreService? _storeService; 
+
     [SetUp]
     public void Setup()
     {
@@ -47,21 +49,25 @@ public class SetStockTests
     {
         _storeService.SetStock("Books", "Isbn1", 42);
     }
+
     [Test]    
     public void SetStockWithCategoryBooksAndItemIsbn1AndNegativeStockThrowsArgumentException()
     {
         Assert.Throws<ArgumentException>(() => _storeService.SetStock("Books", "Isbn1", -42));
     }
+
     [Test]    
     public void SetStockWithNullCategoryThrowsArgumentException()
     {
         Assert.Throws<ArgumentException>(() => _storeService.SetStock(null, "Isbn1", 42));
     }
+
     [Test]    
     public void SetStockWithNullItemThrowsArgumentException()
     {
         Assert.Throws<ArgumentException>(() => _storeService.SetStock("cat", null, 42));
     }
+
     [Test]
     public void SetStockCreatesEntry([Values("books", "dvds")] string category, [Values("item1", "item2")] string item)
     {
@@ -71,5 +77,4 @@ public class SetStockTests
         Assert.AreEqual(expected, stock);
 
     }
-
 }
