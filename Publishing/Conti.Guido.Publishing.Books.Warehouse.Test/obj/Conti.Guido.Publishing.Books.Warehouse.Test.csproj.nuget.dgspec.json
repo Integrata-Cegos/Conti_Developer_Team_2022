@@ -1,0 +1,266 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse.Test\\Conti.Guido.Publishing.Books.Warehouse.Test.csproj": {}
+  },
+  "projects": {
+    "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj",
+        "projectName": "Conti.Guido.Publishing.Books.IsbnGenerator",
+        "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj",
+        "packagesPath": "C:\\Users\\uia42933\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\uia42933\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://h2908727.stratoserver.net:8081/repository/nuget-hosted/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse.Test\\Conti.Guido.Publishing.Books.Warehouse.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse.Test\\Conti.Guido.Publishing.Books.Warehouse.Test.csproj",
+        "projectName": "Conti.Guido.Publishing.Books.Warehouse.Test",
+        "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse.Test\\Conti.Guido.Publishing.Books.Warehouse.Test.csproj",
+        "packagesPath": "C:\\Users\\uia42933\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\uia42933\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://h2908727.stratoserver.net:8081/repository/nuget-hosted/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj": {
+                "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj"
+              },
+              "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj": {
+                "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj"
+              },
+              "D:\\Git\\Conti_Developer_Team\\Store\\Conti.Guido.Store\\Conti.Guido.Store.csproj": {
+                "projectPath": "D:\\Git\\Conti_Developer_Team\\Store\\Conti.Guido.Store\\Conti.Guido.Store.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj",
+        "projectName": "Conti.Guido.Publishing.Books.Warehouse",
+        "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj",
+        "packagesPath": "C:\\Users\\uia42933\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\uia42933\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://h2908727.stratoserver.net:8081/repository/nuget-hosted/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj": {
+                "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Conti.Guido.Store": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Conti.Guido.Utilities": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git\\Conti_Developer_Team\\Store\\Conti.Guido.Store\\Conti.Guido.Store.csproj": {
+      "version": "1.1.1",
+      "restore": {
+        "projectUniqueName": "D:\\Git\\Conti_Developer_Team\\Store\\Conti.Guido.Store\\Conti.Guido.Store.csproj",
+        "projectName": "Conti.Guido.Store",
+        "projectPath": "D:\\Git\\Conti_Developer_Team\\Store\\Conti.Guido.Store\\Conti.Guido.Store.csproj",
+        "packagesPath": "C:\\Users\\uia42933\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\Conti_Developer_Team\\Store\\Conti.Guido.Store\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\uia42933\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://h2908727.stratoserver.net:8081/repository/nuget-hosted/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

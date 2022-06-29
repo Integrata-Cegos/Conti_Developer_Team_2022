@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "zrnfs7tcFCNeK2SwKrm06h/bFDPcQpo53ObekMn8h/F2c9P2W5oSnjlE4jDljWWu/vkvdU1HUTN1OQkinR+NKQ==",
+  "success": false,
+  "projectFilePath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Das Paket \"Conti.Guido.Store\" wurde nicht gefunden. Es sind keine Pakete mit dieser ID in folgenden Quellen vorhanden: Nexus, nuget.org",
+      "libraryId": "Conti.Guido.Store",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Das Paket \"Conti.Guido.Utilities\" wurde nicht gefunden. Es sind keine Pakete mit dieser ID in folgenden Quellen vorhanden: Nexus, nuget.org",
+      "libraryId": "Conti.Guido.Utilities",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
