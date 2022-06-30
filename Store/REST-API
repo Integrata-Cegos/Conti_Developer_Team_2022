@@ -1,0 +1,8 @@
+GET:    http://localhost:80/store/getstock/{isbn}
+PUT:    http://localhost:80/store/setstock/{isbn,count}
+GET:    http://localhost:80/isbn/next/
+CREATE: http://localhost:80/book/createbook/{title,pages,price,options}
+GET:    http://localhost:80/book/findbookbyisbn/{isbn}
+DELETE: http://localhost:80/book/deletebookbyisbn/{isbn}
+GET:    http://localhost:80/book/findbooksbytitle/{title}
+GET:    http://localhost:80/book/findbooksbypricerange/{minPrice,maxPrice}
