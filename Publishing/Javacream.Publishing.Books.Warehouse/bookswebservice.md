@@ -31,3 +31,15 @@
   * DELETE
     * Parameters
       * Pfad-Erweiterung isbn
+* Types
+  * Book
+    * isbn Isbn
+    * title string
+    * price double
+    * pages integer
+    * available boolean
+  * Isbn
+    * part1
+    * part2
+    * part3
+    * part4
