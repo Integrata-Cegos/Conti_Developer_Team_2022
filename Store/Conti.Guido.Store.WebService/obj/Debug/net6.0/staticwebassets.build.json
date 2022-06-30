@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Xzm8T8e6ve2HW2S/8lNfB4bmnE0JeNrRFXskAaMHgpQ=",
+  "Source": "Conti.Guido.Store.WebService",
+  "BasePath": "_content/Conti.Guido.Store.WebService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

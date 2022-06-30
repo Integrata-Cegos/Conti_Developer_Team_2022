@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "HiQ5kZ24EdIPKmy08STjOgRUplmOJJPj+py2XvFxdNU=",
+  "Source": "Conti.Guido.Publishing.WebService",
+  "BasePath": "_content/Conti.Guido.Publishing.WebService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

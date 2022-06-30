@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "wgypejLBakDUOxP9WjMa1uiSDjDavNu2nL2XvkMfQoKxTIcekajJYA6mfq2gyHkWncYetPUMdirL9LIqgG2AXg==",
+  "success": true,
+  "projectFilePath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.WebService\\Conti.Guido.Publishing.WebService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\uia42933\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\uia42933\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\uia42933\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\uia42933\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\uia42933\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\uia42933\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
