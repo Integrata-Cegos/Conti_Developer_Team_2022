@@ -1,7 +1,7 @@
 ﻿namespace DemoWebService.Controllers;
 
 [ApiController]
-[Route("echo")]
+[Route("api")]
 public class EchoController : ControllerBase
 {
     [HttpGet]
@@ -10,4 +10,9 @@ public class EchoController : ControllerBase
         return "Pong";
     }
 
+    [HttpGet("echo/{m}")]
+    public string Echo([FromRoute] string message)
+    {
+        return message;
+    }
 }
