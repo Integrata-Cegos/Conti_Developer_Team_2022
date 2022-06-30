@@ -10,6 +10,7 @@
     
 * Digitales Flipchart
   * https://docs.google.com/presentation/d/1poc2R5FUw8auH6l3fJuH-4JDB5i9XBdoY4PiCQrmAsI/edit?usp=sharing
+  * https://docs.google.com/presentation/d/1TcEjyEeAZk95mVC2G4PMf3agRx43XpoqTcdScUjmDBM/edit?usp=sharing
   
 * Seminarzeiten
   * 4 Einheiten pro Tag, je Unterrichtseinheit etwa 90 Minuten
@@ -20,6 +21,6 @@
   * Dienstag 3.5. und Mittwoch 4.5. Seminarbeginn um 8:30! 
   * **ÄNDERUNGEN Block 3/Block 4**
     * Donnerstag 23.6. 9:00 - **16:45**
-    * Donnerstag 24.6. **8:00 - 16:00**
+    * Donnerstag 30.6. **8:00 - 16:00**
     * Freitag 24.6., 1.7. **8:00 - 16:00**
     * Mittwoch 29.6 **13:00 - 16:45**
