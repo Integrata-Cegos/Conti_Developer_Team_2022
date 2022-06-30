@@ -4,16 +4,21 @@ namespace DemoWebService.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class WetterAussichtenController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
+    private static readonly string[] Countries = new[]
+    {
+        "Germany", "Algeria", "Haiti", "Malawi", "Egypt", "Monaco", "Zimbabwe", "Sierra Leone", "Thailand", "Afghanistan", "Uruguay", "United Kingdom",
+        "Brazil", "Cambodia", "Cuba", "Dominican Republic", "France" 
+    };
 
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<WetterAussichtenController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WetterAussichtenController(ILogger<WetterAussichtenController> logger)
     {
         _logger = logger;
     }
@@ -25,7 +30,8 @@ public class WeatherForecastController : ControllerBase
         {
             Date = DateTime.Now.AddDays(index),
             TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            Summary = Summaries[Random.Shared.Next(Summaries.Length)],
+            Country = Countries[Random.Shared.Next(Countries.Length)]
         })
         .ToArray();
     }
