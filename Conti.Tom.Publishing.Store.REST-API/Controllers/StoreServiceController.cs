@@ -1,20 +1,26 @@
 ﻿namespace Conti.Tom.Publishing.Store.REST_API.Controllers;
 
+
 [ApiController]
 [Route("[controller]")]
 public class StoreServiceController : ControllerBase
 {
-    [HttpGet]
-    [Route("GetStock/{category}")]
-    public int GetStock(string category)
+    IStoreService _storeService;
+
+    public StoreServiceController(IStoreService storeService)
     {
-        return 1;
+        _storeService = storeService;   
     }
 
-    [HttpPost]
-    [Route("SetStock/{category}")]
-    public void SetStock(string category)
+    [HttpGet("GetStock/{category}/{itemid}")]
+    public int GetStock([FromRoute(Name ="category")]string category, [FromRoute(Name = "itemid")] string item)
     {
-        return;
+        return _storeService.GetStock(category, item);
+    }
+
+    [HttpPost("SetStock/{category}/{item}/{stock}")]
+    public void SetStock(string category, string item, int stock)
+    {
+        _storeService.SetStock(category, item, stock);
     }
 }
