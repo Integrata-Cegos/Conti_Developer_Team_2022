@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "+7buFhnJQp5R0KMjVpcnB02OzhAeEe/6hjQyZ497nKQ=",
+  "Source": "DemoWebService",
+  "BasePath": "_content/DemoWebService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Conti.Guido.Store/1.1.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Conti.Guido.Store.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Conti.Guido.Store.dll": {}
+        }
+      },
       "Conti.Guido.Utilities/2.0.0": {
         "type": "package",
         "compile": {
@@ -919,20 +929,15 @@
         "runtime": {
           "bin/placeholder/Conti.Guido.Publishing.Books.Warehouse.dll": {}
         }
-      },
-      "Conti.Guido.Store/1.1.1": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Conti.Guido.Store.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Conti.Guido.Store.dll": {}
-        }
       }
     }
   },
   "libraries": {
+    "Conti.Guido.Store/1.1.1": {
+      "type": "project",
+      "path": "../../Store/Conti.Guido.Store/Conti.Guido.Store.csproj",
+      "msbuildProject": "../../Store/Conti.Guido.Store/Conti.Guido.Store.csproj"
+    },
     "Conti.Guido.Utilities/2.0.0": {
       "sha512": "6zhGKhECnsn55z/gLdZwTKVJZ2658cPxjTBHQj038J2vGh5PjZZU+Nuh2ZsmT0TysufkNY+YER+DAba3k2on5Q==",
       "type": "package",
@@ -3933,11 +3938,6 @@
       "type": "project",
       "path": "../Conti.Guido.Publishing.Books.Warehouse/Conti.Guido.Publishing.Books.Warehouse.csproj",
       "msbuildProject": "../Conti.Guido.Publishing.Books.Warehouse/Conti.Guido.Publishing.Books.Warehouse.csproj"
-    },
-    "Conti.Guido.Store/1.1.1": {
-      "type": "project",
-      "path": "../../Store/Conti.Guido.Store/Conti.Guido.Store.csproj",
-      "msbuildProject": "../../Store/Conti.Guido.Store/Conti.Guido.Store.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4039,16 +4039,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Das Paket \"Conti.Guido.Store\" wurde nicht gefunden. Es sind keine Pakete mit dieser ID in folgenden Quellen vorhanden: Nexus, nuget.org",
-      "libraryId": "Conti.Guido.Store",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

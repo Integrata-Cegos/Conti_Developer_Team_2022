@@ -1,0 +1,15 @@
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\bin\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.deps.json
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\bin\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\bin\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.pdb
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\bin\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\bin\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.pdb
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.csproj.AssemblyReference.cache
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.AssemblyInfoInputs.cache
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.AssemblyInfo.cs
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.csproj.CoreCompileInputs.cache
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.csproj.CopyComplete
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\refint\Conti.Guido.Publishing.Books.Warehouse.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.pdb
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.Books.Warehouse\obj\Debug\net6.0\ref\Conti.Guido.Publishing.Books.Warehouse.dll

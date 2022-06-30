@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Conti.Guido.Store/1.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Conti.Guido.Store.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Conti.Guido.Store.dll": {}
+        }
+      },
       "Conti.Guido.Utilities/2.0.0": {
         "type": "package",
         "compile": {
@@ -24,6 +33,17 @@
     }
   },
   "libraries": {
+    "Conti.Guido.Store/1.1.1": {
+      "sha512": "M0eLCHJi6pp9VRb9CEWC1C9vep3gwAyyaDngIqohLWWQuUEhzYM00+KHbSg4fmh0ihPeWDml13VZfQe0pselOQ==",
+      "type": "package",
+      "path": "conti.guido.store/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        "conti.guido.store.1.1.1.nupkg.sha512",
+        "conti.guido.store.nuspec",
+        "lib/net6.0/Conti.Guido.Store.dll"
+      ]
+    },
     "Conti.Guido.Utilities/2.0.0": {
       "sha512": "6zhGKhECnsn55z/gLdZwTKVJZ2658cPxjTBHQj038J2vGh5PjZZU+Nuh2ZsmT0TysufkNY+YER+DAba3k2on5Q==",
       "type": "package",
@@ -117,16 +137,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Das Paket \"Conti.Guido.Store\" wurde nicht gefunden. Es sind keine Pakete mit dieser ID in folgenden Quellen vorhanden: Nexus, nuget.org",
-      "libraryId": "Conti.Guido.Store",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }
