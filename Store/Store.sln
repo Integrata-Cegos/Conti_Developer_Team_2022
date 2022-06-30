@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.Guido.Store", "Conti.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.Guido.Store.Test", "Conti.Guido.Store.Test\Conti.Guido.Store.Test.csproj", "{7BF7BC2D-953B-4F37-8F69-A49500B92561}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.Guido.StoreWebService", "Conti.Guido.StoreWebService\Conti.Guido.StoreWebService.csproj", "{DC07FAF4-4576-4AB8-B7FC-E01D02FE2CD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{7BF7BC2D-953B-4F37-8F69-A49500B92561}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BF7BC2D-953B-4F37-8F69-A49500B92561}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BF7BC2D-953B-4F37-8F69-A49500B92561}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC07FAF4-4576-4AB8-B7FC-E01D02FE2CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC07FAF4-4576-4AB8-B7FC-E01D02FE2CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC07FAF4-4576-4AB8-B7FC-E01D02FE2CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC07FAF4-4576-4AB8-B7FC-E01D02FE2CD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
