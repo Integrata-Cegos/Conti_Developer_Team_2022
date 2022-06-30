@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "+7buFhnJQp5R0KMjVpcnB02OzhAeEe/6hjQyZ497nKQ=",
-  "Source": "DemoWebService",
-  "BasePath": "_content/DemoWebService",
+  "Hash": "PG0tV0/gMbkLvp2WHnpWG4zbvfpOsRkYAxQUS5ruJu0=",
+  "Source": "WebService",
+  "BasePath": "_content/WebService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
