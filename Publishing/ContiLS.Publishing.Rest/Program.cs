@@ -1,16 +1,20 @@
-using ContiLS.Store.API;
-using ContiLS.Store.Impl;
-
+using ContiLS.IsbnGenerator.API;
+using ContiLS.IsbnGenerator.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-//In älteren Versionen: public void ConfigureServices(... services){services.AddControllers()}
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IStoreService>(new StoreService());
+
+var isbnGenerator = new RandomIsbnService();
+isbnGenerator.Prefix = "REST-ISBN";
+isbnGenerator.CountryCode = "-dk";
+builder.Services.AddSingleton<IIsbnService>(isbnGenerator); 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

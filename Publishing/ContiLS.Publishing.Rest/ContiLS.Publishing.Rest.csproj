@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ContiLS.Store\ContiLS.Store.csproj" />
+    <ProjectReference Include="..\ContiLS.Publishing.Books.IsbnGenerator\ContiLS.Publishing.Books.IsbnGenerator.csproj" />
   </ItemGroup>
 
 </Project>
