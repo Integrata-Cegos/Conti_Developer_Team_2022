@@ -7,9 +7,16 @@ namespace DemoWebService.Controllers;
 public class EchoController : ControllerBase 
 {
     [HttpGet]
-    public String ping()
+    public string ping()
     {
-        Console.WriteLine("Called ping");
+        Console.WriteLine("# called Ping");
         return "pong";
     }
+    [HttpGet("echo/{message}")]
+    public String echo([FromRoute] String message){
+        Console.WriteLine("# called echo with message " + message);
+        return message;
+    }
+
+
 }
