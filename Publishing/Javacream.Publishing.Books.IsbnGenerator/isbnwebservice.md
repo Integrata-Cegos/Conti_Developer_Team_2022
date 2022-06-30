@@ -4,4 +4,5 @@
   * http://localhost:5000/isbn
 * Operations
   * POST
-  
+    * Result
+      * text/plain

@@ -9,16 +9,25 @@
       * Pfad-Erweiterung pages
       * Pfad-Erweiterung price
       * Body options
+        * application/json
+    * Result
+      * text/plain
   * GET
     * Parameters
       * Pfad-Erweiterung isbn
+    * Result
+      * application/json
   * GET
     * Parameters
       * Header-Parameter "title"
+    * Result
+      * application/json
   * GET
     * Parameters
       * Header-Parameter "minPrice"
       * Header-Parameter "maxPrice"
+    * Result
+      * application/json
   * DELETE
     * Parameters
       * Pfad-Erweiterung isbn
