@@ -1,8 +1,0 @@
-Server URL
-  http://localhost:5000
-Basis-URL = Endpoint
-  http://localhost:5000/isbngeneratorimpl
-Operations
-  GET
-   Header-Parameter “isbnnext”
-   Path-Erweiterung: wird als item interpretiert
