@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zrnfs7tcFCNeK2SwKrm06h/bFDPcQpo53ObekMn8h/F2c9P2W5oSnjlE4jDljWWu/vkvdU1HUTN1OQkinR+NKQ==",
+  "dgSpecHash": "ym1zeyEfNmBxo/MNbMLgJxVh9GOR/n4tht2SjyiX4Heq7KIoAZI9He0hPJiE1lFefWX3Y16KPloJn3q4wsDglQ==",
   "success": false,
-  "projectFilePath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj",
+  "projectFilePath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Application\\Conti.Guido.Publishing.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uia42933\\.nuget\\packages\\conti.guido.utilities\\2.0.0\\conti.guido.utilities.2.0.0.nupkg.sha512"
   ],

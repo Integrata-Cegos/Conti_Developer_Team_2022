@@ -20,6 +20,21 @@
         "runtime": {
           "bin/placeholder/Conti.Guido.Publishing.Books.IsbnGenerator.dll": {}
         }
+      },
+      "Conti.Guido.Publishing.Books.Warehouse/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Conti.Guido.Publishing.Books.IsbnGenerator": "1.0.0",
+          "Conti.Guido.Store": "1.1.0",
+          "Conti.Guido.Utilities": "2.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Conti.Guido.Publishing.Books.Warehouse.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Conti.Guido.Publishing.Books.Warehouse.dll": {}
+        }
       }
     }
   },
@@ -39,13 +54,18 @@
       "type": "project",
       "path": "../Conti.Guido.Publishing.Books.IsbnGenerator/Conti.Guido.Publishing.Books.IsbnGenerator.csproj",
       "msbuildProject": "../Conti.Guido.Publishing.Books.IsbnGenerator/Conti.Guido.Publishing.Books.IsbnGenerator.csproj"
+    },
+    "Conti.Guido.Publishing.Books.Warehouse/1.0.0": {
+      "type": "project",
+      "path": "../Conti.Guido.Publishing.Books.Warehouse/Conti.Guido.Publishing.Books.Warehouse.csproj",
+      "msbuildProject": "../Conti.Guido.Publishing.Books.Warehouse/Conti.Guido.Publishing.Books.Warehouse.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Conti.Guido.Publishing.Books.IsbnGenerator >= 1.0.0",
-      "Conti.Guido.Store >= 1.1.0",
-      "Conti.Guido.Utilities >= 2.0.0"
+      "Conti.Guido.Publishing.Books.Warehouse >= 1.0.0",
+      "Conti.Guido.Store >= 1.1.0"
     ]
   },
   "packageFolders": {
@@ -54,11 +74,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj",
-      "projectName": "Conti.Guido.Publishing.Books.Warehouse",
-      "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj",
+      "projectUniqueName": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Application\\Conti.Guido.Publishing.Application.csproj",
+      "projectName": "Conti.Guido.Publishing.Application",
+      "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Application\\Conti.Guido.Publishing.Application.csproj",
       "packagesPath": "C:\\Users\\uia42933\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\obj\\",
+      "outputPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\uia42933\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -76,6 +96,9 @@
           "projectReferences": {
             "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj": {
               "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.IsbnGenerator\\Conti.Guido.Publishing.Books.IsbnGenerator.csproj"
+            },
+            "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj": {
+              "projectPath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse\\Conti.Guido.Publishing.Books.Warehouse.csproj"
             }
           }
         }
@@ -93,10 +116,6 @@
           "Conti.Guido.Store": {
             "target": "Package",
             "version": "[1.1.0, )"
-          },
-          "Conti.Guido.Utilities": {
-            "target": "Package",
-            "version": "[2.0.0, )"
           }
         },
         "imports": [
