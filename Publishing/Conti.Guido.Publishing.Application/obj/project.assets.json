@@ -26,7 +26,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Conti.Guido.Publishing.Books.IsbnGenerator": "1.0.0",
-          "Conti.Guido.Store": "1.1.0",
+          "Conti.Guido.Store": "1.1.1",
           "Conti.Guido.Utilities": "2.0.0"
         },
         "compile": {
@@ -65,7 +65,7 @@
     "net6.0": [
       "Conti.Guido.Publishing.Books.IsbnGenerator >= 1.0.0",
       "Conti.Guido.Publishing.Books.Warehouse >= 1.0.0",
-      "Conti.Guido.Store >= 1.1.0"
+      "Conti.Guido.Store >= 1.1.1"
     ]
   },
   "packageFolders": {
@@ -115,7 +115,7 @@
         "dependencies": {
           "Conti.Guido.Store": {
             "target": "Package",
-            "version": "[1.1.0, )"
+            "version": "[1.1.1, )"
           }
         },
         "imports": [

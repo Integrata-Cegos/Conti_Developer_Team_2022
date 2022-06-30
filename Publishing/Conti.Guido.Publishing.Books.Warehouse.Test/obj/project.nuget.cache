@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "32UY6NyEGhtnt+CvM5Xuhdc2UZy0CUoq3H5VujKQVbpnlJr9c1GC4Gh23/mI7zXcK8ryBkBaJDyJ+CeRk1u9Dg==",
-  "success": true,
+  "dgSpecHash": "YLz4GCEqJ7wkRDfxXjHJuBACZk3lymONIGbu460U3NHtnNLNE0qYrm9kAKI4L43W+ZkvUcZeZ5iudzbM9Qen2Q==",
+  "success": false,
   "projectFilePath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.Books.Warehouse.Test\\Conti.Guido.Publishing.Books.Warehouse.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\uia42933\\.nuget\\packages\\conti.guido.utilities\\2.0.0\\conti.guido.utilities.2.0.0.nupkg.sha512",
@@ -53,5 +53,15 @@
     "C:\\Users\\uia42933\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\uia42933\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Das Paket \"Conti.Guido.Store\" wurde nicht gefunden. Es sind keine Pakete mit dieser ID in folgenden Quellen vorhanden: Nexus, nuget.org",
+      "libraryId": "Conti.Guido.Store",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -910,7 +910,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Conti.Guido.Publishing.Books.IsbnGenerator": "1.0.0",
-          "Conti.Guido.Store": "1.1.0",
+          "Conti.Guido.Store": "1.1.1",
           "Conti.Guido.Utilities": "2.0.0"
         },
         "compile": {
@@ -4039,5 +4039,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Das Paket \"Conti.Guido.Store\" wurde nicht gefunden. Es sind keine Pakete mit dieser ID in folgenden Quellen vorhanden: Nexus, nuget.org",
+      "libraryId": "Conti.Guido.Store",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -48,7 +48,7 @@
           "dependencies": {
             "Conti.Guido.Store": {
               "target": "Package",
-              "version": "[1.1.0, )"
+              "version": "[1.1.1, )"
             }
           },
           "imports": [
@@ -164,7 +164,7 @@
           "dependencies": {
             "Conti.Guido.Store": {
               "target": "Package",
-              "version": "[1.1.0, )"
+              "version": "[1.1.1, )"
             },
             "Conti.Guido.Utilities": {
               "target": "Package",
