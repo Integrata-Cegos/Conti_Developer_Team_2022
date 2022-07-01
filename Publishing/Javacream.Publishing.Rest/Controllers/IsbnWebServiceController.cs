@@ -8,7 +8,7 @@ namespace Javacream.Store.Rest.Controllers;
 public class IsbnWebServiceController : ControllerBase
 {
     [HttpPost]
-    [Produces(MediaTypeNames.Application.Json)]
+    [Produces(MediaTypeNames.Text.Plain)]
     public String Next([FromServices] IIsbnService isbnService){
         return isbnService.Next().ToString();
     }

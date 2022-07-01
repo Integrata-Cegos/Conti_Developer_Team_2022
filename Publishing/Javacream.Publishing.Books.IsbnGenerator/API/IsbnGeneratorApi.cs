@@ -45,15 +45,6 @@ namespace Javacream.IsbnGenerator.API{
                 _part2 = value;
             }
         }
-        public int Part4
-        {
-            get{
-                return _part4;
-            }
-            set{
-                _part4 = value;
-            }
-        }
         public int Part3
         {
             get{
@@ -63,8 +54,17 @@ namespace Javacream.IsbnGenerator.API{
                 _part3 = value;
             }
         }
-        public Isbn(){}
-        public Isbn(int p1, int p2, int p3, int p4) :this("ISBN:", "-world", p1, p2, p3, p4)
+        public int Part4
+        {
+            get{
+                return _part4;
+            }
+            set{
+                _part4 = value;
+            }
+        }       
+         public Isbn(){}
+        public Isbn(int p1, int p2, int p3, int p4) :this("ISBN", "world", p1, p2, p3, p4)
         {}
 
         public Isbn(string prefix, string countryCode, int p1, int p2, int p3, int p4){
