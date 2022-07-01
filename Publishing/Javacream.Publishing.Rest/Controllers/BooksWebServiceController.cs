@@ -18,7 +18,14 @@ public class BooksWebServiceController : ControllerBase
     [HttpGet("byIsbn")]
     [Produces(MediaTypeNames.Application.Json)]
     public Book FindBookByIsbn([FromHeader(Name = "isbn")] String isbn){
-        return _booksService.FindBookByIsbn(From(isbn));
+        try
+        {
+            return _booksService.FindBookByIsbn(From(isbn));
+        }
+        catch
+        {
+            throw new HttpResponseException(HttpStatusCode.NotFound); 
+        }
     }
 
     [HttpPost]
@@ -44,8 +51,10 @@ public class BooksWebServiceController : ControllerBase
     }
 
     [HttpPut]
-    public void Update([FromHeader(Name = "book")]Book book)
+    public void UpdatePrice([FromHeader(Name = "isbn")]Isbn isbn, [FromHeader(Name = "price")] double newPrice)
     {
+        var book = _booksService.FindBookByIsbn(isbn);
+        book.Price = newPrice;
         _booksService.UpdateBook(book);
     }
     private Isbn From(string isbnAsString)
