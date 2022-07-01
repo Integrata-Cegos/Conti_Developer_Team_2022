@@ -26,33 +26,68 @@ public class BooksController : ControllerBase
 
     [HttpPost("CreateBook")]
     [Produces(MediaTypeNames.Application.Json)]
-    public string PostCreateBook([FromHeader]string title, [FromHeader]int pages,[FromHeader] double price,[FromHeader] Dictionary<string, Object> options)
+    public ActionResult<string> PostCreateBook([FromHeader]string title, [FromHeader]int pages,[FromHeader] double price,[FromHeader] Dictionary<string, Object> options)
     {
         return _booksService.CreateBook(title,pages,price,options).IsbnString;
     }
     [HttpPut("UpdateBook")]
-    public void Update([FromHeader]Book book)
+    public ActionResult Update([FromHeader]Book book)
     {
-        _booksService.UpdateBook(book);
+        try
+        {
+            _booksService.UpdateBook(book);
+        }
+        catch (System.Exception)
+        {
+            return NotFound();
+        }
+        
+        return Ok();
     }
     [HttpGet("FindBookByIsbn")]
     [Produces(MediaTypeNames.Application.Json)]
-    public Book GetFindBookByIsbn([FromHeader]string isbnString){
-        return _booksService.FindBookByIsbn(new Isbn(isbnString));
+    public ActionResult<Book> GetFindBookByIsbn([FromHeader]string isbnString){
+        try
+        {
+            return _booksService.FindBookByIsbn(new Isbn(isbnString));
+        }
+        catch (System.Exception)
+        {
+            return NotFound();
+        }
+        
     }
     [HttpGet("FindBooksByTitle")]
     [Produces(MediaTypeNames.Application.Json)]
-    public List<Book> GetFindBooksByTitle([FromHeader]string title){
-        return _booksService.FindBooksByTitle(title);
+    public ActionResult<List<Book>> GetFindBooksByTitle([FromHeader]string title){
+        var result= _booksService.FindBooksByTitle(title);
+        if(result.Count == 0){
+            return NoContent();
+        }
+        return result;
+        
     }
     [HttpGet("FindBooksByPriceRange")]
     [Produces(MediaTypeNames.Application.Json)]
-    public List<Book> GetFindBooksByPriceRange([FromHeader]double minPrice, [FromHeader]double maxPrice){
-        return _booksService.FindBooksByPriceRange(minPrice,maxPrice);
+    public ActionResult<List<Book>> GetFindBooksByPriceRange([FromHeader]double minPrice, [FromHeader]double maxPrice){
+        var result = _booksService.FindBooksByPriceRange(minPrice,maxPrice);
+        if(result.Count == 0){
+            return NoContent();
+        }
+        return result;
     }
     [HttpDelete("DeleteBookByIsbn")]
     [Produces(MediaTypeNames.Application.Json)]
-    public void DeleteDeleteBookByIsbn([FromHeader]string isbnString){
-        _booksService.DeleteBookByIsbn(new Isbn(isbnString));
+    public ActionResult DeleteDeleteBookByIsbn([FromHeader]string isbnString){
+        
+        try
+        {
+            _booksService.DeleteBookByIsbn(new Isbn(isbnString));
+        }
+        catch (System.Exception)
+        {
+            return NotFound();
+        }
+        return Ok();
     }
 }
