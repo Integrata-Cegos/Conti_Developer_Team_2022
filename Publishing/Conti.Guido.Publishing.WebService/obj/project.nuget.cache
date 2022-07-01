@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wgypejLBakDUOxP9WjMa1uiSDjDavNu2nL2XvkMfQoKxTIcekajJYA6mfq2gyHkWncYetPUMdirL9LIqgG2AXg==",
+  "dgSpecHash": "Voq+xW1I11YC/5xhbR4419qEIjjM8lFcYWcaZ+eWOq0BENAK9DQ7ctVJaJLr/ZockJzKxj0Bvgnl7yB1w4HnHg==",
   "success": true,
   "projectFilePath": "D:\\Git\\Conti_Developer_Team\\Publishing\\Conti.Guido.Publishing.WebService\\Conti.Guido.Publishing.WebService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\uia42933\\.nuget\\packages\\conti.guido.store\\1.1.1\\conti.guido.store.1.1.1.nupkg.sha512",
+    "C:\\Users\\uia42933\\.nuget\\packages\\conti.guido.utilities\\2.0.0\\conti.guido.utilities.2.0.0.nupkg.sha512",
     "C:\\Users\\uia42933\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\uia42933\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\uia42933\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

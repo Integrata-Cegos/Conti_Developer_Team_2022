@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Conti.Guido.IsbnGenerator.API;
+using Conti.Guido.Books.API;
 using System.Net.Mime;
 namespace Conti.Guido.Store.Rest.Controllers;
 
@@ -14,3 +15,4 @@ public class IsbnWebServiceController : ControllerBase
     }
 
 }
+

@@ -27,3 +27,7 @@ D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\obj\Deb
 D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\obj\Debug\net6.0\ref\Conti.Guido.Publishing.WebService.dll
 D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\bin\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.dll
 D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\bin\Debug\net6.0\Conti.Guido.Publishing.Books.IsbnGenerator.pdb
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\bin\Debug\net6.0\Conti.Guido.Store.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\bin\Debug\net6.0\Conti.Guido.Utilities.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\bin\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.dll
+D:\Git\Conti_Developer_Team\Publishing\Conti.Guido.Publishing.WebService\bin\Debug\net6.0\Conti.Guido.Publishing.Books.Warehouse.pdb
