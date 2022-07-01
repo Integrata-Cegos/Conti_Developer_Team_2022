@@ -7,7 +7,12 @@ namespace Conti.BK.IsbnGenerator.API{
         private int _part2;
         private int _part3;
         private int _part4;
-
+        public string Prifix {get{return _prefix;}}
+        public string CountryCode {get{return _countryCode;}}
+        public int Part1 {get{return _part1;}}
+        public int Part2 {get{return _part2;}}
+        public int Part3 {get{return _part3;}}
+        public int Part4 {get{return _part4;}}
         public string IsbnString{
             get{
                 return this.ToString();
