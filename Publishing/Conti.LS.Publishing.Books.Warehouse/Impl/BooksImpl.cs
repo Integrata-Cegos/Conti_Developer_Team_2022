@@ -78,6 +78,11 @@ namespace ContiLS.Books.Impl
             return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice).ConvertAll(this.SetAvailability);
         }
 
+        public void UpdateBook(Book book)
+        {
+            _books.Remove(book.Isbn);
+            _books.Add(book.Isbn, book);
+        }
         private Book SetAvailability(Book book)
         {
             int stockForIsbn = this._storeService.GetStock("books", book.Isbn);

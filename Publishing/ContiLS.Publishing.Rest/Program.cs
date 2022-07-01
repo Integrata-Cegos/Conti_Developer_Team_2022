@@ -1,5 +1,9 @@
 using ContiLS.IsbnGenerator.API;
 using ContiLS.IsbnGenerator.Impl;
+using ContiLS.Store.API;
+using ContiLS.Store.Impl;
+using ContiLS.Books.API;
+using ContiLS.Books.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +14,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var isbnGenerator = new RandomIsbnService();
-isbnGenerator.Prefix = "REST-ISBN";
-isbnGenerator.CountryCode = "-dk";
-builder.Services.AddSingleton<IIsbnService>(isbnGenerator); 
+var isbnService = new RandomIsbnService();
+isbnService.Prefix = "REST-ISBN";
+isbnService.CountryCode = "-dk";
+var storeService = new StoreService();
+storeService.SetStock("books", new Isbn(4,5,6,7), 100);
+storeService.SetStock("books", new Isbn(4,5,6,8), 10);
+var booksService = new BooksService(isbnService, storeService);
+builder.Services.AddSingleton<IIsbnService>(isbnService); 
+builder.Services.AddSingleton<IBooksService>(booksService); 
+builder.Services.AddSingleton<IStoreService>(storeService); 
 
 var app = builder.Build();
 

@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ContiLS.Store" Version="1.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ContiLS.Publishing.Books.IsbnGenerator\ContiLS.Publishing.Books.IsbnGenerator.csproj" />
+    <ProjectReference Include="..\Conti.LS.Publishing.Books.Warehouse\ContiLS.Publishing.Books.Warehouse.csproj" />
   </ItemGroup>
 
 </Project>
