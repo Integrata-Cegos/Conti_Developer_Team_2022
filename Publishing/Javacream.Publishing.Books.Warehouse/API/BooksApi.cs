@@ -40,12 +40,16 @@ namespace Javacream.Books.API
         void DeleteBookByIsbn(Isbn isbn);
         List<Book> FindBooksByTitle(string title);
         List<Book> FindBooksByPriceRange(double minPrice, double maxPrice);
-
+        void UpdateBook(Book book);
     }
 
     public class Book : Object, IComparable<Book>
     {
 
+        public Book()
+        {
+
+        }
         public int CompareTo(Book? book)
         {
             if (book != null)
@@ -57,7 +61,7 @@ namespace Javacream.Books.API
                 throw new Exception("null cannot be compared");
             }
         }
-        public Isbn Isbn { get; }
+        public Isbn Isbn { get; set;}
         private string? _title;
         public string Title
         {

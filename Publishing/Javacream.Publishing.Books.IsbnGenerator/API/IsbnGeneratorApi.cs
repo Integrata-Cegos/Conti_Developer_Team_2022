@@ -8,16 +8,72 @@ namespace Javacream.IsbnGenerator.API{
         private int _part3;
         private int _part4;
 
+        public string Prefix
+        {
+            get{
+                return _prefix;
+            }
+            set{
+                _prefix = value;
+            }
+        }
+        public string CountryCode
+        {
+            get{
+                return _countryCode;
+            }
+            set{
+                _countryCode = value;
+            }
+        }
+
+        public int Part1
+        {
+            get{
+                return _part1;
+            }
+            set{
+                _part1 = value;
+            }
+        }
+        public int Part2
+        {
+            get{
+                return _part2;
+            }
+            set{
+                _part2 = value;
+            }
+        }
+        public int Part4
+        {
+            get{
+                return _part4;
+            }
+            set{
+                _part4 = value;
+            }
+        }
+        public int Part3
+        {
+            get{
+                return _part3;
+            }
+            set{
+                _part3 = value;
+            }
+        }
+        public Isbn(){}
         public Isbn(int p1, int p2, int p3, int p4) :this("ISBN:", "-world", p1, p2, p3, p4)
         {}
 
         public Isbn(string prefix, string countryCode, int p1, int p2, int p3, int p4){
-            this._part1 = p1;
-            this._part2 = p2;
-            this._part3 = p3;
-            this._part4 = p4;
-            this._countryCode = countryCode;
-            this._prefix = prefix;
+            this.Part1 = p1;
+            this.Part2 = p2;
+            this.Part3 = p3;
+            this.Part4 = p4;
+            this.CountryCode = countryCode;
+            this.Prefix = prefix;
         }
 
         public override int GetHashCode()
@@ -54,7 +110,7 @@ namespace Javacream.IsbnGenerator.API{
 
         public override string ToString()
         {
-            string isbnAsString = _prefix + _part1 + "-" + _part2 + "-" + _part3 + "-" + _part4 + _countryCode;
+            string isbnAsString = $"{_prefix}:{_part1}-{_part2}-{_part3}-{_part4}-{_countryCode}";
             return isbnAsString;
         }
 
