@@ -9,9 +9,9 @@ namespace ContiLS.Publishing.Rest.Controllers;
 public class IsbnWebServiceController : ControllerBase
 {
     [HttpPost]
-    [Produces(MediaTypeNames.Application.Json)]
-    public Isbn Next([FromServices] IIsbnService isbnService){
-        return isbnService.Next();
+    [Produces(MediaTypeNames.Text.Plain)]
+    public String Next([FromServices] IIsbnService isbnService){
+        return isbnService.Next().ToString();
     }
 
 }
