@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Javacream.Books.API;
+using Javacream.IsbnGenerator.API;
 using System.Net.Mime;
 namespace Javacream.Store.Rest.Controllers;
 
@@ -15,8 +16,8 @@ public class BooksWebServiceController : ControllerBase
     }
     [HttpGet("{isbn}")]
     [Produces(MediaTypeNames.Application.Json)]
-    public Book FindBookByIsbn([FromRoute(Name = "isbn")] string isbn){
-        return booksService.FindBookByIsbn(isbn);
+    public Book FindBookByIsbn([FromRoute(Name = "isbn")] Isbn isbn){
+        return _booksService.FindBookByIsbn(isbn);
     }
 
 }
