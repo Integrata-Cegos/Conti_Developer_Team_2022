@@ -40,7 +40,7 @@ namespace Javacream.Books.API
         void DeleteBookByIsbn(Isbn isbn);
         List<Book> FindBooksByTitle(string title);
         List<Book> FindBooksByPriceRange(double minPrice, double maxPrice);
-
+        void UpdateBook(Book book);
     }
 
     public class Book : Object, IComparable<Book>
