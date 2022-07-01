@@ -29,33 +29,35 @@ public class BooksWebServiceController : ControllerBase
     }
 
     [HttpPost]
-    public Isbn CreateBook([FromHeader(Name="title")] string title, [FromHeader(Name="pages")] int pages, [FromHeader(Name="price")]double price, [FromHeader(Name="options")]Dictionary<string, Object> options){
+    public ActionResult<Isbn> CreateBook([FromHeader(Name="title")] string title, [FromHeader(Name="pages")] int pages, [FromHeader(Name="price")]double price, [FromHeader(Name="options")]Dictionary<string, Object> options){
          return _booksService.CreateBook(title, pages, price, options);
     }
 
     [HttpDelete]
-    public void DeleteBookByIsbn([FromHeader(Name = "isbn")]Isbn isbn)
+    public ActionResult DeleteBookByIsbn([FromHeader(Name = "isbn")]Isbn isbn)
     {
         _booksService.DeleteBookByIsbn(isbn);
+        return new EmptyResult();
     }
     [HttpGet("byTitle")]
-    public List<Book> FindBooksByTitle([FromHeader(Name = "title")]string title)
+    public ActionResult<List<Book>> FindBooksByTitle([FromHeader(Name = "title")]string title)
     {
         return _booksService.FindBooksByTitle(title);
     }
 
     [HttpGet("byPriceRange")]
-    public List<Book> FindBooksByPriceRange([FromHeader(Name = "minPrice")] double minPrice, [FromHeader(Name = "maxPrice")] double maxPrice)
+    public ActionResult<List<Book>> FindBooksByPriceRange([FromHeader(Name = "minPrice")] double minPrice, [FromHeader(Name = "maxPrice")] double maxPrice)
     {
         return _booksService.FindBooksByPriceRange(minPrice, maxPrice);
     }
 
     [HttpPut]
-    public void UpdatePrice([FromHeader(Name = "isbn")]Isbn isbn, [FromHeader(Name = "price")] double newPrice)
+    public ActionResult UpdatePrice([FromHeader(Name = "isbn")]Isbn isbn, [FromHeader(Name = "price")] double newPrice)
     {
         var book = _booksService.FindBookByIsbn(isbn);
         book.Price = newPrice;
         _booksService.UpdateBook(book);
+        return new EmptyResult();
     }
     private Isbn From(string isbnAsString)
     {
