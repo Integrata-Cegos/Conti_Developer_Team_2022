@@ -55,7 +55,11 @@ namespace Conti.BK.Books.Impl
             this._books.Add(isbn, newBook);
             return isbn;
         }
-
+        public void UpdateBook(Book book)
+        {
+            _books.Remove(book.Isbn);
+            _books.Add(book.Isbn, book);
+        }
         public Book FindBookByIsbn(Isbn isbn)
         {
             Book book = this._books[isbn];

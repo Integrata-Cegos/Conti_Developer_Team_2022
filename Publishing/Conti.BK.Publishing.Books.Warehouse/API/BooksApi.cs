@@ -40,6 +40,7 @@ namespace Conti.BK.Books.API
         void DeleteBookByIsbn(Isbn isbn);
         List<Book> FindBooksByTitle(string title);
         List<Book> FindBooksByPriceRange(double minPrice, double maxPrice);
+        void UpdateBook(Book book);
 
     }
 

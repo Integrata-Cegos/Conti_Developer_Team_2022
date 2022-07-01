@@ -8,6 +8,23 @@ namespace Conti.BK.IsbnGenerator.API{
         private int _part3;
         private int _part4;
 
+        public string IsbnString{
+            get{
+                return this.ToString();
+            } 
+            set{
+                this._countryCode = value.Split(':')[0];
+                var split = value.Split(':')[1].Split("-");
+                this._part1 = Convert.ToInt32(split[0]);
+                this._part2 = Convert.ToInt32(split[1]);
+                this._part3 = Convert.ToInt32(split[2]);
+                this._part4 = Convert.ToInt32(split[3]);
+                this._countryCode = split[4];
+            }
+        }
+        public Isbn(string isbnString){
+            this.IsbnString = isbnString;
+        }
         public Isbn(int p1, int p2, int p3, int p4) :this("ISBN:", "-world", p1, p2, p3, p4)
         {}
 
