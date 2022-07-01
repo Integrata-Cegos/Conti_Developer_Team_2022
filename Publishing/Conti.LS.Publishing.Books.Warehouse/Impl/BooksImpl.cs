@@ -1,17 +1,21 @@
 using ContiLS.IsbnGenerator.API;
-using ContiLS.Store.API;
 using ContiLS.Books.API;
+using System.Net.Http;
+using System.Net.Http.Headers;
 namespace ContiLS.Books.Impl
 {
 
     public class BooksService : IBooksService
     {
-        public BooksService(IIsbnService isbnService, IStoreService storeService){
+        private readonly HttpClient client = new HttpClient();
+
+        public BooksService(IIsbnService isbnService){
             this._isbnService = isbnService;
-            this._storeService = storeService; 
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
         }
         private IIsbnService _isbnService;
-        private IStoreService _storeService;
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
         public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
@@ -85,7 +89,8 @@ namespace ContiLS.Books.Impl
         }
         private Book SetAvailability(Book book)
         {
-            int stockForIsbn = this._storeService.GetStock("books", book.Isbn);
+            Task<String> stockPromise = client.GetStringAsync($"http://localhost:5158/api/store/path/books/{book.Isbn}");
+            int stockForIsbn = Int32.Parse(stockPromise.Result);
             if (stockForIsbn > 0)
             {
                 book.Available = true;
