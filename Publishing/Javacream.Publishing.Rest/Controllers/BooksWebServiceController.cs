@@ -17,8 +17,8 @@ public class BooksWebServiceController : ControllerBase
     }
     [HttpGet("byIsbn")]
     [Produces(MediaTypeNames.Application.Json)]
-    public Book FindBookByIsbn([FromHeader(Name = "isbn")] Isbn isbn){
-        return _booksService.FindBookByIsbn(isbn);
+    public Book FindBookByIsbn([FromHeader(Name = "isbn")] String isbn){
+        return _booksService.FindBookByIsbn(From(isbn));
     }
 
     [HttpPost]
@@ -48,5 +48,16 @@ public class BooksWebServiceController : ControllerBase
     {
         _booksService.UpdateBook(book);
     }
-
+    private Isbn From(string isbnAsString)
+    {
+        string[] split1 = isbnAsString.Split(":");
+        string prefix = split1[0];
+        string[] split2 = split1[1].Split("-");
+        int part1 = Int32.Parse(split2[0]);
+        int part2 = Int32.Parse(split2[1]);
+        int part3 = Int32.Parse(split2[2]);
+        int part4 = Int32.Parse(split2[3]);
+        string countryCode = split2[4];
+        return new Isbn(prefix, countryCode, part1, part2, part3, part4);
+    }
 }

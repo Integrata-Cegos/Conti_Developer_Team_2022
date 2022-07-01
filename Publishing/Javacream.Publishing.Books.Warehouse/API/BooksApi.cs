@@ -46,6 +46,10 @@ namespace Javacream.Books.API
     public class Book : Object, IComparable<Book>
     {
 
+        public Book()
+        {
+
+        }
         public int CompareTo(Book? book)
         {
             if (book != null)
@@ -57,7 +61,7 @@ namespace Javacream.Books.API
                 throw new Exception("null cannot be compared");
             }
         }
-        public Isbn Isbn { get; }
+        public Isbn Isbn { get; set;}
         private string? _title;
         public string Title
         {
