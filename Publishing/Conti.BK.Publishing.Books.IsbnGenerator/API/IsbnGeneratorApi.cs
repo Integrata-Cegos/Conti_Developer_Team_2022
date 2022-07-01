@@ -12,7 +12,7 @@ namespace Conti.BK.IsbnGenerator.API{
             get{
                 return this.ToString();
             } 
-            set{
+            private set{
                 this._countryCode = value.Split(':')[0];
                 var split = value.Split(':')[1].Split("-");
                 this._part1 = Convert.ToInt32(split[0]);
