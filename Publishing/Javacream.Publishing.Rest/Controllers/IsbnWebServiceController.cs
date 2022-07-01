@@ -9,7 +9,7 @@ public class IsbnWebServiceController : ControllerBase
 {
     [HttpPost]
     [Produces(MediaTypeNames.Text.Plain)]
-    public String Next([FromServices] IIsbnService isbnService){
+    public ActionResult<String> Next([FromServices] IIsbnService isbnService){
         return isbnService.Next().ToString();
     }
 
