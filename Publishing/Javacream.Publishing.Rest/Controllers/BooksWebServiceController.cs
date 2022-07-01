@@ -42,13 +42,23 @@ public class BooksWebServiceController : ControllerBase
     [HttpGet("byTitle")]
     public ActionResult<List<Book>> FindBooksByTitle([FromHeader(Name = "title")]string title)
     {
-        return _booksService.FindBooksByTitle(title);
+        var books = _booksService.FindBooksByTitle(title);
+        if (books.Count == 0){
+            return NotFound();
+        }else{
+            return books;
+        }
     }
 
     [HttpGet("byPriceRange")]
     public ActionResult<List<Book>> FindBooksByPriceRange([FromHeader(Name = "minPrice")] double minPrice, [FromHeader(Name = "maxPrice")] double maxPrice)
     {
-        return _booksService.FindBooksByPriceRange(minPrice, maxPrice);
+        var books = _booksService.FindBooksByPriceRange(minPrice, maxPrice);
+        if (books.Count == 0){
+            return NotFound();
+        }else{
+            return books;
+        }
     }
 
     [HttpPut]
