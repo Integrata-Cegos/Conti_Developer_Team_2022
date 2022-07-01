@@ -6,24 +6,23 @@ using System.Text.Json;
 public class Application
 {
     private readonly HttpClient client = new HttpClient();
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         Console.WriteLine("starting main...");
-        new Application().callWebService();
+        await new Application().callWebService();
         Console.WriteLine("finished main");
     }
 
-    private void callWebService()
+    private async Task callWebService()
     {
         client.DefaultRequestHeaders.Accept.Clear();
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        Task<String> resultPromise = client.GetStringAsync("http://h2908727.stratoserver.net:8080/api/books");
-        Console.WriteLine(resultPromise.Result);
+        string result = await client.GetStringAsync("http://h2908727.stratoserver.net:8080/api/books");
+        Console.WriteLine(result);
 
-        var booksPromise = client.GetStreamAsync("http://h2908727.stratoserver.net:8080/api/books");
-        var data = booksPromise.Result;
-        var booksListPromise = JsonSerializer.DeserializeAsync<List<Book>>(data);
-        booksListPromise.Result.ForEach(book => Console.WriteLine(book.isbn));
+        var data = await client.GetStreamAsync("http://h2908727.stratoserver.net:8080/api/books");
+        var booksList = await JsonSerializer.DeserializeAsync<List<Book>>(data);
+        booksList.ForEach(book => Console.WriteLine(book.isbn));
 
     }
 
