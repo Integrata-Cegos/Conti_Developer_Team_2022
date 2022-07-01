@@ -99,5 +99,11 @@ namespace Conti.Tom.Publishing.Books.Warehouse.Services
             return _books.Values.ToList().FindAll(x => x.Price > min && x.Price < max).ConvertAll(book => SetAvailability(book));
         }
 
+        public void UpdateBook(Book book)
+        {
+            _books.Remove(book.ISBN);
+            _books.Add(book.ISBN, book);
+        }
+
     }
 }

@@ -11,4 +11,5 @@ public interface IBooksService
     Book FindBookByIsbn(ISBN isbn);
     List<Book> FindBooksByPriceRange(double min, double max);
     List<Book> FindBooksByTitle(string title);
+    void UpdateBook(Book book);
 }

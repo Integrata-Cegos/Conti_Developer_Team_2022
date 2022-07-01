@@ -22,7 +22,7 @@ public static class ApplicationContext
         _ISBNService = new RandomISBNService();
         _ISBNService.Prefix = _ConfigurationService.GetConfiguration("isbn.prefix");
         _ISBNService.CountryCode = _ConfigurationService.GetConfiguration("isbn.countryCode");
-        _StoreService = new StoreService();
+        _StoreService = new StoreService(); 
         _BooksService = new BooksService(_ISBNService, _StoreService);
         _StoreService.SetStock("books", new ISBN(4, 5, 6, 7), 100);
     }

@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Conti.Tom.Publishing.Store" Version="1.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Conti.Tom.Publishing.Books.IsbnGenerator\Conti.Tom.Publishing.Books.IsbnGenerator.csproj" />
+    <ProjectReference Include="..\Conti.Tom.Publishing.Books.Warehouse\Conti.Tom.Publishing.Books.Warehouse.csproj" />
   </ItemGroup>
 
 </Project>
