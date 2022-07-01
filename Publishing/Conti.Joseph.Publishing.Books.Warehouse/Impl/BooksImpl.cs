@@ -77,6 +77,11 @@ namespace Conti.Joseph.Books.Impl
             var bookList = this._books.Values.ToList();
             return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice).ConvertAll(this.SetAvailability);
         }
+        public void UpdateBook(Book book)
+        {
+            _books.Remove(book.Isbn);
+            _books.Add(book.Isbn, book);
+        }
 
         private Book SetAvailability(Book book)
         {
