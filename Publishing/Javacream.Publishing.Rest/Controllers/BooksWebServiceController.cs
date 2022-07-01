@@ -17,14 +17,14 @@ public class BooksWebServiceController : ControllerBase
     }
     [HttpGet("byIsbn")]
     [Produces(MediaTypeNames.Application.Json)]
-    public Book FindBookByIsbn([FromHeader(Name = "isbn")] String isbn){
+    public ActionResult<Book> FindBookByIsbn([FromHeader(Name = "isbn")] String isbn){
         try
         {
             return _booksService.FindBookByIsbn(From(isbn));
         }
         catch
         {
-            throw new HttpResponseException(HttpStatusCode.NotFound); 
+            return NotFound(); 
         }
     }
 
