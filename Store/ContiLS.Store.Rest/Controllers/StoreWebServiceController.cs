@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ContiLS.Store.API;
 
+
 namespace ContiLS.Store.Rest.Controllers;
 
 [ApiController]
@@ -14,14 +15,14 @@ public class StoreWebServiceController : ControllerBase
     }
     [HttpGet("path/{ItemCategory}/{ItemId}")]
     [Produces("text/plain")]
-    public String GetStock([FromRoute(Name="ItemCategory")] string category, [FromRoute(Name="ItemId")]string item)
+    public ActionResult<String> GetStock([FromRoute(Name="ItemCategory")] string category, [FromRoute(Name="ItemId")]string item)
     {
         return _storeService.GetStock(category, item).ToString();
     }
 [HttpPost]
-    public void SetStock([FromHeader(Name="ItemCategory")] string category, [FromHeader(Name="ItemId")] string item, [FromHeader(Name="stock")] int stock){
+    public ActionResult SetStock([FromHeader(Name="ItemCategory")] string category, [FromHeader(Name="ItemId")] string item, [FromHeader(Name="stock")] int stock){
         _storeService.SetStock(category, item, stock);
+        return new EmptyResult();
     }
 
 }
-    

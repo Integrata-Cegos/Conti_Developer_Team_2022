@@ -1,23 +1,21 @@
-﻿while(true){
-Console.Write("enter a test (pub, bs, b) or x for exit:");    
-string? test = Console.ReadLine();
-switch (test){
-    case "pub": {
-        Application.TestPublisher();
-        break;
+﻿
+using System.Net.Http;
+using System.Net.Http.Headers;
+public class Application
+{
+    private readonly HttpClient client = new HttpClient();
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("starting main...");
+        new Application().CallWebService();
+        Console.WriteLine("finished main");
     }
 
-    case "bs": {
-        Application.TestBooksService();
-        break;
+    private void CallWebService()
+    {
+        client.DefaultRequestHeaders.Accept.Clear();
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        var result = client.GetStringAsync("http://h2908727.stratoserver.net:8080/api/books");
+        Console.WriteLine(result);
     }
-    case "b": {
-        Application.TestBooks();
-        break;
-    }
-    case "x": {
-        Environment.Exit(0);
-        break;
-    }
-}
 }
