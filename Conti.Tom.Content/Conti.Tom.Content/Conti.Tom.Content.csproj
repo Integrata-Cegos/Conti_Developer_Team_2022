@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Conti.Tom.Publishing.Books.IsbnGenerator\Conti.Tom.Publishing.Books.IsbnGenerator.csproj" />
-  </ItemGroup>
-
 </Project>

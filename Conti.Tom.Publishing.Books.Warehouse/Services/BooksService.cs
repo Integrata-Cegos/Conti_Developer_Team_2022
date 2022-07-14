@@ -4,19 +4,22 @@ using Conti.Tom.Publishing.Books.IsbnGenerator.Models;
 using Conti.Tom.Publishing.Books.IsbnGenerator.Services;
 using Conti.Tom.Publishing.Books.Warehouse.Interfaces;
 using Conti.Tom.Publishing.Books.Warehouse.Models;
-using Conti.Tom.Publishing.Store;
+using System.Diagnostics;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace Conti.Tom.Publishing.Books.Warehouse.Services
 {
     public class BooksService : IBooksService
     {
+        private readonly HttpClient client = new HttpClient();
         private IISBNService _ISBNService;
-        private IStoreService _storeService;
+        //private IStoreService _storeService;
 
-        public BooksService(IISBNService iSBNService, IStoreService storeService)
+        public BooksService(IISBNService iSBNService)
         {
             _ISBNService = iSBNService;
-            _storeService = storeService;
+            //_storeService = storeService;
         }
 
         private Dictionary<ISBN, Book> _books = new Dictionary<ISBN, Book>();
@@ -70,10 +73,21 @@ namespace Conti.Tom.Publishing.Books.Warehouse.Services
             return book;
 
         }
+        private int GetBooksFromWebService(string category, ISBN isbn)
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            Task<string> resultPromise = client.GetStringAsync($"https://localhost:7014/StoreService/GetStock/{category}/{isbn}");
+            Debug.WriteLine($"Result = {resultPromise.Result}");
+            int.TryParse(resultPromise.Result, out int stock);
+            return stock;
+        }
 
         private Book SetAvailability(Book book)
         {
-            int isbnStock = this._storeService.GetStock("books", book.ISBN);
+            //int isbnStock = this._storeService.GetStock("books", book.ISBN);
+            int isbnStock = GetBooksFromWebService("books", book.ISBN);
+
             if (isbnStock > 0)
             {
                 book.Available = true;
