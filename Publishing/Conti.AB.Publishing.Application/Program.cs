@@ -1,23 +1,33 @@
-﻿while(true){
-Console.Write("enter a test (pub, bs, b) or x for exit:");    
-string? test = Console.ReadLine();
-switch (test){
-    case "pub": {
-        Application.TestPublisher();
-        break;
+﻿using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Collections.Generic;
+using System.Text.Json;
+
+public class Application
+{
+    private readonly HttpClient client = new HttpClient();
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("starting Main...");
+        new Application().callWebService();
+        Console.WriteLine("finished Main");
     }
 
-    case "bs": {
-        Application.TestBooksService();
-        break;
+    private void callWebService()
+    {
+        client.DefaultRequestHeaders.Accept.Clear();
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        Task<String> resultPromise = client.GetStringAsync("http://h2908727.stratoserver.net:8080/api/books");
+        Console.WriteLine(resultPromise.Result);
+
+        var booksPromise = client.GetStreamAsync("http://h2908727.stratoserver.net:8080/api/books");
+        var data = booksPromise.Result;
+        var booksListPromise = JsonSerializer.DeserializeAsync<List<Book>>(data);
+        booksListPromise.Result.ForEach(book => Console.WriteLine(book.isbn));
     }
-    case "b": {
-        Application.TestBooks();
-        break;
+
+    class Book{
+        public string isbn {get; set;}
+        public string title {get; set;}
     }
-    case "x": {
-        Environment.Exit(0);
-        break;
-    }
-}
 }

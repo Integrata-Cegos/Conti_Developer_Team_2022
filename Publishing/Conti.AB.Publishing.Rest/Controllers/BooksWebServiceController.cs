@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Conti.AB.Books.API;
 using Conti.AB.IsbnGenerator.API;
 using System.Net.Mime;
+using System.Collections.Generic;
 
 namespace Conti.AB.Publishing.Rest.Controllers;
 
@@ -19,39 +20,74 @@ public class BooksWebServiceController : ControllerBase
 
     [HttpGet("byIsbn")]
     [Produces(MediaTypeNames.Application.Json)]
-    public Book FindBookByIsbn([FromRoute(Name = "isbn")] Isbn isbn)
+    public ActionResult<Book> FindBookByIsbn([FromRoute(Name = "isbn")] string isbn)
     {
-        return _booksService.FindBookByIsbn(isbn);
+        try{
+            return _booksService.FindBookByIsbn(From(isbn));
+        }
+        catch{
+            return NotFound();
+        }
     }
 
     [HttpPost]
-    public Isbn CreateBook([FromHeader(Name="title")] string title, [FromHeader(Name="pages")] int pages, [FromHeader(Name="price")] double price, [FromHeader(Name="options")] Dictionary<string, Object> options)
+    public ActionResult<Isbn> CreateBook([FromHeader(Name="title")] string title, [FromHeader(Name="pages")] int pages, [FromHeader(Name="price")] double price, [FromHeader(Name="options")] Dictionary<string, Object> options)
     {
         return _booksService.CreateBook(title, pages, price, options);
     }
 
     [HttpDelete]
-    public void DeleteBookByIsbn ([FromHeader(Name="isbn")] Isbn isbn)
+    public ActionResult DeleteBookByIsbn ([FromHeader(Name="isbn")] Isbn isbn)
     {
         _booksService.DeleteBookByIsbn(isbn);
+        return new EmptyResult();
     }
 
     [HttpGet("byTitle")]
-    public List<Book> FindBooksByTitle ([FromHeader(Name="title")] string title)
+    public ActionResult<List<Book>> FindBooksByTitle ([FromHeader(Name="title")] string title)
     {
-        return _booksService.FindBooksByTitle(title);
+        var books = _booksService.FindBooksByTitle(title);
+        if (books.Count == 0)
+        {
+            return NotFound();
+        }
+        else {
+            return books;
+        }
     }
 
     [HttpGet("byPriceRange")]
-    public List<Book> FindBooksByPriceRange ([FromHeader(Name="minPrice")] double minPrice, [FromHeader(Name="maxPrice")] double maxPrice)
+    public ActionResult<List<Book>> FindBooksByPriceRange ([FromHeader(Name="minPrice")] double minPrice, [FromHeader(Name="maxPrice")] double maxPrice)
     {
-        return _booksService.FindBooksByPriceRange(minPrice, maxPrice);
+        var books = _booksService.FindBooksByPriceRange(minPrice, maxPrice);
+        if (books.Count == 0)
+        {
+            return NotFound();
+        }
+        else {
+            return books;
+        }
     }
 
     [HttpPut]
-    public void UpdateBook([FromHeader(Name="book")] Book book)
+    public ActionResult UpdatePrice([FromHeader(Name="isbn")] Isbn isbn, [FromHeader(Name="price")] double newPrice)
     {
+        var book = _booksService.FindBookByIsbn(isbn);
+        book.Price = newPrice;
         _booksService.UpdateBook(book);
+        return new EmptyResult();
+    }
+    private Isbn From(string isbnAsString)
+    {
+        string[] split1= isbnAsString.Split(":");
+        string prefix = split1[0];
+        string[] split2 = split1[1].Split("-");
+        int part1 = Int32.Parse(split2[0]);
+        int part2 = Int32.Parse(split2[1]);
+        int part3 = Int32.Parse(split2[2]);
+        int part4 = Int32.Parse(split2[3]);
+        string countryCode = split2[4];
+        return new Isbn(prefix, countryCode, part1, part2, part3, part4);
     }
 } 
 

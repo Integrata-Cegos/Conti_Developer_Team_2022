@@ -11,9 +11,9 @@ public class IsbnWebServiceController : ControllerBase
 {
     [HttpPost]
     [Produces(MediaTypeNames.Application.Json)]
-    public Isbn Next([FromServices] IIsbnService isbnService)
+    public string Next([FromServices] IIsbnService isbnService)
     {
-        return isbnService.Next();
+        return isbnService.Next().ToString();
     }
 }
 

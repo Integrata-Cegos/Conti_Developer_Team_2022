@@ -15,8 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var isbnGenerator = new RandomIsbnService();
-isbnGenerator.Prefix = "REST-ISBN";
-isbnGenerator.CountryCode = "-dk";
+isbnGenerator.Prefix = "REST";
+isbnGenerator.CountryCode = "dk";
 var storeService = new StoreService();
 storeService.SetStock("books", new Isbn(4,5,6,7), 100);
 storeService.SetStock("books", new Isbn(4,5,6,8), 10);
