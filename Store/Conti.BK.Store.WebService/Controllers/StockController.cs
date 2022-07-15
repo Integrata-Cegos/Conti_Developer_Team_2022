@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Conti.BK.Store.Impl;
 using Conti.BK.Store.API;
+using Conti.BK.IsbnGenerator.API;
 
 namespace Conti.BK.Store.WebService.Controllers;
 
@@ -13,14 +14,14 @@ public class StockController : ControllerBase
 _store=store;
     }
     [HttpPost("SetStock")]
-    public string Post([FromHeader]string cat, [FromHeader]Isbn isbn,[FromHeader] int count){
-        _store.SetStock(cat,isbn,count);
-        return "set to "+count;
+    public string Post([FromHeader]string cat, [FromHeader]string isbn,[FromHeader] int count){
+        _store.SetStock(cat,new Isbn(isbn),count);
+        return new Isbn(isbn).IsbnString+" set to "+count;
     }
 
     [HttpGet("GetStock")]
-    public int Get([FromHeader]string cat, [FromHeader]Isbn isbn)
+    public int Get([FromHeader]string cat, [FromHeader]string isbn)
     {
-        return _store.GetStock(cat,isbn);
+        return _store.GetStock(cat,new Isbn(isbn));
     }
 }

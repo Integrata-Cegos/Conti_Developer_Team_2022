@@ -9,8 +9,9 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\Conti.BK.Store\Conti.BK.Store.csproj" />
-    <ProjectReference Include="..\..\Publishing\Conti.BK.Publishing.Books.IsbnGenerator\Conti.BK.Publishing.Books.IsbnGenerator.csproj" />
+    <ProjectReference Include="..\Conti.BK.Content\Conti.BK.Content.csproj" />
   </ItemGroup>
+
 </Project>

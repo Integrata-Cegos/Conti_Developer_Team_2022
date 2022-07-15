@@ -1,17 +1,21 @@
 using Conti.BK.IsbnGenerator.API;
-using Conti.BK.Store.API;
+using System.Collections.Generic;
+using System.Text.Json;
+using System.Net.Http;
+using System.Net.Http.Headers;
+//using Conti.BK.Store.API;
 using Conti.BK.Books.API;
 namespace Conti.BK.Books.Impl
 {
 
     public class BooksService : IBooksService
     {
-        public BooksService(IIsbnService isbnService, IStoreService storeService){
+        public BooksService(IIsbnService isbnService){
             this._isbnService = isbnService;
-            this._storeService = storeService; 
+         
         }
         private IIsbnService _isbnService;
-        private IStoreService _storeService;
+
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
         public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
@@ -84,7 +88,8 @@ namespace Conti.BK.Books.Impl
 
         private Book SetAvailability(Book book)
         {
-            int stockForIsbn = this._storeService.GetStock("books", book.Isbn);
+            //int stockForIsbn = this._storeService.GetStock("books", book.Isbn);
+            int stockForIsbn = GetStockFromWebApi("books", book.Isbn);
             if (stockForIsbn > 0)
             {
                 book.Available = true;
@@ -94,6 +99,22 @@ namespace Conti.BK.Books.Impl
                 book.Available = false;
             }
             return book;
+        }
+private readonly HttpClient client = new HttpClient();
+        private int GetStockFromWebApi(string cat, Isbn isbn)
+        {
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("plain/text"));
+            client.DefaultRequestHeaders.Add("cat",cat);
+            client.DefaultRequestHeaders.Add("isbn",((Isbn)isbn).IsbnString);
+
+            var booksPromise =  client.GetStreamAsync("http://localhost:5213/api/Stock/GetStock");
+            var data = booksPromise.Result;
+            var booksListPromise = JsonSerializer.DeserializeAsync<int>(data);
+            Console.WriteLine(((Isbn)isbn).IsbnString + "   "+booksListPromise.Result);
+            return booksListPromise.Result;
+  
         }
     }
 
