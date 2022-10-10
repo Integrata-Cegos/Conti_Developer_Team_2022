@@ -83,7 +83,7 @@ namespace Javacream.Store.Impl{
                 var reader = command.ExecuteReader();
                 List<string> categories = new List<string>();
                 while(reader.Read()){
-                    categories.Add(reader['category']);
+                    categories.Add((string)reader["category"]);
                 }
                     return categories;
             }

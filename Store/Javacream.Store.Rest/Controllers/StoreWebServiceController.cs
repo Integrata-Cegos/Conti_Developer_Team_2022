@@ -17,6 +17,14 @@ public class StoreWebServiceController : ControllerBase
     {
         return _storeService.GetStock(category, item).ToString();
     }
+
+    [HttpGet("path/categories")]
+    [Produces("application/json")]
+    public ActionResult<List<string>> GetCategories()
+    {
+        return _storeService.GetCategories();
+    }
+
 [HttpPost]
     public ActionResult SetStock([FromHeader(Name="ItemCategory")] string category, [FromHeader(Name="ItemId")] string item, [FromHeader(Name="stock")] int stock){
         _storeService.SetStock(category, item, stock);

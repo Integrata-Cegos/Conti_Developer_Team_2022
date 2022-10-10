@@ -12,6 +12,13 @@ public class GetStockTests
         _storeService = new DatabaseStoreService();    
     }
     [Test]
+    public void RetrieveCategories()
+    {
+        List<string> cats =  _storeService.GetCategories();
+        Assert.GreaterOrEqual(cats.Count, 0);
+
+    }
+    [Test]
     public void GetStockWithCategoryBooksAndItemIsbn1RetrievesStockGreaterThanNull()
     {
         int stock = _storeService.GetStock("books", "ISBN1");
