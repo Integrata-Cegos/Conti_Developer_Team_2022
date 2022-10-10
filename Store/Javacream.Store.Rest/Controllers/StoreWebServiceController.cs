@@ -17,6 +17,18 @@ public class StoreWebServiceController : ControllerBase
     {
         return _storeService.GetStock(category, item).ToString();
     }
+    [HttpDelete("path/{ItemCategory}/{ItemId}")]
+    public void DeleteItem([FromRoute(Name="ItemCategory")] string category, [FromRoute(Name="ItemId")]string item)
+    {
+        _storeService.DeleteItem(category, item);
+    }
+    [HttpDelete("path/{ItemCategory}")]
+    public void DeleteCategory([FromRoute(Name="ItemCategory")] string category)
+    {
+        _storeService.DeleteCategory(category);
+    }
+
+
 
     [HttpGet("path/count/{ItemCategory}")]
     [Produces("text/plain")]

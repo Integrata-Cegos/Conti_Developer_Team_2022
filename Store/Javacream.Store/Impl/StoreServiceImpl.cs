@@ -122,6 +122,35 @@ namespace Javacream.Store.Impl{
                     return categories;
             }
         }
+       public void DeleteItem(string category, Object item)
+       {
+            using (var connection = sqlFactory.CreateConnection())
+             {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "delete from store where category = @category and item=@item";
+                command.Parameters.Add(new SqlParameter("@category", category));
+                command.Parameters.Add(new SqlParameter("@item", item));
+                command.ExecuteNonQuery();
+          }
+
+       }
+        public void DeleteCategory(string category)
+        {
+            using (var connection = sqlFactory.CreateConnection())
+             {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "delete from store where category = @category";
+                command.Parameters.Add(new SqlParameter("@category", category));
+                command.ExecuteNonQuery();
+          }
+
+        }
 
     }
 

@@ -6,6 +6,8 @@ namespace Javacream.Store.API{
         public List<String> GetCategories();
         public int GetNumberOfItemsFor(string category);
         public List<string> GetNumberOfItemsForCategories();
+        public void DeleteItem(string category, Object item);
+        public void DeleteCategory(string category);
 
     }
 }
