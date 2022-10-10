@@ -41,7 +41,7 @@ public class SetStockTests
     [SetUp]
     public void Setup()
     {
-        _storeService = new StoreService();    
+        _storeService = new DatabaseStoreService();    
     }
 
     [Test]    
