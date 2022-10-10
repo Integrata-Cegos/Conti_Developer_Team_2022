@@ -1,7 +1,7 @@
-using Javacream.Store.API;
+using GU.Store.API;
 using System.Data.Common;
 using System.Data.SqlClient;
-namespace Javacream.Store.Impl{
+namespace GU.Store.Impl{
     public class DatabaseStoreService : IStoreService
     {
         private readonly string connectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=teilnehmer;Password=teilnehmer123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
