@@ -1,0 +1,12 @@
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\bin\Debug\net6.0\GU.Utilities.deps.json
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\bin\Debug\net6.0\GU.Utilities.dll
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\bin\Debug\net6.0\GU.Utilities.pdb
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\GU.Utilities.csproj.AssemblyReference.cache
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\GU.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\GU.Utilities.AssemblyInfoInputs.cache
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\GU.Utilities.AssemblyInfo.cs
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\GU.Utilities.csproj.CoreCompileInputs.cache
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\GU.Utilities.dll
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\refint\GU.Utilities.dll
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\GU.Utilities.pdb
+D:\Git\Conti_Developer_Team\Utilities\GU.Utilities\obj\Debug\net6.0\ref\GU.Utilities.dll

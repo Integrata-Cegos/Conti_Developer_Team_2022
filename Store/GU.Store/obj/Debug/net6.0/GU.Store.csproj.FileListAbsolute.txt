@@ -1,0 +1,12 @@
+D:\Git\Conti_Developer_Team\Store\GU.Store\bin\Debug\net6.0\GU.Store.deps.json
+D:\Git\Conti_Developer_Team\Store\GU.Store\bin\Debug\net6.0\GU.Store.dll
+D:\Git\Conti_Developer_Team\Store\GU.Store\bin\Debug\net6.0\GU.Store.pdb
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.csproj.AssemblyReference.cache
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.AssemblyInfoInputs.cache
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.AssemblyInfo.cs
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.csproj.CoreCompileInputs.cache
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.dll
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\refint\GU.Store.dll
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.pdb
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\ref\GU.Store.dll
