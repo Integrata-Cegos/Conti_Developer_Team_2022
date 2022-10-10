@@ -1,7 +1,7 @@
-using GU.Store.API;
+using Javacream.Store.API;
 using System.Data.Common;
 using System.Data.SqlClient;
-namespace GU.Store.Impl{
+namespace Javacream.Store.Impl{
     public class DatabaseStoreService : IStoreService
     {
         private readonly string connectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=teilnehmer;Password=teilnehmer123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -83,7 +83,7 @@ namespace GU.Store.Impl{
                 var reader = command.ExecuteReader();
                 List<string> categories = new List<string>();
                 while(reader.Read()){
-                    categories.Add(reader['category']);
+                    categories.Add((string)reader["category"]);
                 }
                     return categories;
             }
