@@ -51,25 +51,35 @@ namespace Javacream.Store.Impl{
 
             using (var connection = sqlFactory.CreateConnection())
              {
+
                 connection.ConnectionString = connectionString;
                 connection.Open();
+                var transaction = connection.BeginTransaction();
                 DbCommand command = sqlFactory.CreateCommand();
-                try{
-                    command.Connection = connection;
-                    command.CommandText = "insert into store (category,item, stock) Values (@category, @item, @stock)";
-                    command.Parameters.Add(new SqlParameter("@category", category));
-                    command.Parameters.Add(new SqlParameter("@item", item));
-                    command.Parameters.Add(new SqlParameter("@stock", stock));
-                    command.ExecuteNonQuery();
-                }
-                catch(SqlException e)
+                command.Connection = connection;
+                command.Transaction = transaction;
+                command.CommandText = "delete from store where category=@category and item= @item";
+                command.Parameters.Add(new SqlParameter("@category", category));
+                command.Parameters.Add(new SqlParameter("@item", item));
+                command.ExecuteNonQuery();
+                command.CommandText = "insert into store (category,item, stock) Values (@category, @item, @stock)";
+                command.Parameters.Add(new SqlParameter("@stock", stock));
+                command.ExecuteNonQuery();
+                command.CommandText = "insert into MESSAGES  Values (@message)";
+                command.Parameters.Add(new SqlParameter("@message", "updated stock"));
+                command.ExecuteNonQuery();
+
+                try
                 {
-                    //Console.WriteLine(e.Message);
-                    command.CommandText = "update store set stock = @stock where category = @category and item= @item";
-                    command.ExecuteNonQuery();
+                    transaction.Commit();
                 }
+                catch(Exception e)
+                {
+                    Console.WriteLine("UNABLE TO COMMIT!");
+                }
+            }
           }
-     }
+     
          public int GetNumberOfItemsFor(string category)
          {
             using (var connection = sqlFactory.CreateConnection())
@@ -126,14 +136,18 @@ namespace Javacream.Store.Impl{
        {
             using (var connection = sqlFactory.CreateConnection())
              {
+
                 connection.ConnectionString = connectionString;
                 connection.Open();
+                var transaction = connection.BeginTransaction();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
                 command.CommandText = "delete from store where category = @category and item=@item";
                 command.Parameters.Add(new SqlParameter("@category", category));
                 command.Parameters.Add(new SqlParameter("@item", item));
                 command.ExecuteNonQuery();
+                //TODO: Fehlerbehandlung bei nicht-erfolgreichem commit
+                transaction.Commit();
           }
 
        }
