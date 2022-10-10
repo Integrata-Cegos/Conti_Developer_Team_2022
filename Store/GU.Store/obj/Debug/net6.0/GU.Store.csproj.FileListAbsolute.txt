@@ -10,3 +10,5 @@ D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.dll
 D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\refint\GU.Store.dll
 D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.pdb
 D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\ref\GU.Store.dll
+D:\Git\Conti_Developer_Team\Store\GU.Store\bin\Debug\net6.0\GU.Store.runtimeconfig.json
+D:\Git\Conti_Developer_Team\Store\GU.Store\obj\Debug\net6.0\GU.Store.genruntimeconfig.cache
