@@ -18,6 +18,13 @@ public class StoreWebServiceController : ControllerBase
         return _storeService.GetStock(category, item).ToString();
     }
 
+    [HttpGet("path/count/{ItemCategory}")]
+    [Produces("text/plain")]
+    public ActionResult<String> GetNumberOfItemsFor([FromRoute(Name="ItemCategory")] string category)
+    {
+        return _storeService.GetNumberOfItemsFor(category).ToString();
+    }
+
     [HttpGet("path/categories")]
     [Produces("application/json")]
     public ActionResult<List<string>> GetCategories()

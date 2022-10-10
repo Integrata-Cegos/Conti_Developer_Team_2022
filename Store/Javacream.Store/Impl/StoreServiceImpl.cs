@@ -70,7 +70,41 @@ namespace Javacream.Store.Impl{
                 }
           }
      }
+         public int GetNumberOfItemsFor(string category)
+         {
+            using (var connection = sqlFactory.CreateConnection())
+            {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "select count(*) as count from store where category=@category";
+                command.Parameters.Add(new SqlParameter("@category", category));
+                var reader = command.ExecuteReader();
+                reader.Read();
+                return (int)reader["count"];
+            }
+
+         }
+
+        public List<string> GetNumberOfItemsForCategories(){
+           using (var connection = sqlFactory.CreateConnection())
+            {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "select distinct category from store";
+                var reader = command.ExecuteReader();
+                List<string> categories = new List<string>();
+                while(reader.Read()){
+                    categories.Add((string)reader["category"]);
+                }
+                    return categories;
+            }
  
+        }
+
          public List<String> GetCategories()
         {
             using (var connection = sqlFactory.CreateConnection())

@@ -19,6 +19,13 @@ public class GetStockTests
 
     }
     [Test]
+    public void CountSawitzkisItems()
+    {
+        int count =  _storeService.GetNumberOfItemsFor("sawitzki");
+        Assert.AreEqual(2, count);
+
+    }
+    [Test]
     public void GetStockWithCategoryBooksAndItemIsbn1RetrievesStockGreaterThanNull()
     {
         int stock = _storeService.GetStock("books", "ISBN1");
