@@ -1,62 +1,75 @@
 using GU.Store.API;
+using System.Data.Common;
+using System.Data.SqlClient;
 namespace GU.Store.Impl{
-    public class StoreService : IStoreService{
-        public class StoreEntry{
-            public StoreEntry(string cat, Object item){
-                if (cat == null){
-                    throw new ArgumentException("null category");
-                }
-                if (item == null){
-                    throw new ArgumentException("null item");
-                }
-                this._category = cat;
-                this._item = item;
-            }
-            private string _category;
-            private Object _item;
+    public class DatabaseStoreService : IStoreService
+    {
+        private readonly string connectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=teilnehmer;Password=teilnehmer123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private DbProviderFactory sqlFactory = System.Data.SqlClient.SqlClientFactory.Instance;
 
-            public override int GetHashCode()
-            {
-                return _category.GetHashCode() + _item.GetHashCode();
+        public int GetStock(string category, Object item)
+        {
+            if (category == null){
+                throw new ArgumentException("null category");
             }
-
-            public override bool Equals(object? obj)
+            if (item == null){
+                throw new ArgumentException("null item");
+            }
+            using (var connection = sqlFactory.CreateConnection())
             {
-                if (obj != null){
-                StoreEntry se = (StoreEntry) obj;
-                return se._item.Equals(this._item) && se._category.Equals(this._category);
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "select stock from store where category = @category and item = @item";
+                command.Parameters.Add(new SqlParameter("@category", category));
+                command.Parameters.Add(new SqlParameter("@item", item));
+                var reader = command.ExecuteReader();
+                try
+                {
+                    reader.Read();
+                    int stock = (int)reader["stock"];
+                    return stock;
                 }
-                else{
-                    return false;
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return 0;
                 }
             }
         }
-        public Dictionary<StoreEntry, int> _stock;
-        
-        public StoreService(){
-         _stock = new Dictionary<StoreEntry, int>();
-        }
-
-        public int GetStock(string category, Object item){
-            int stock = 0;
-            bool hasStock = _stock.TryGetValue(new StoreEntry(category, item), out stock);
-            if (hasStock)
-            {
-                return stock;
-            }else
-            {
-                return 0;
-            }
-            }
-        
-
         public void SetStock(string category, Object item, int stock){
-            if (stock < 0){
-                throw new ArgumentException("stock was null");
+            if (category == null){
+                throw new ArgumentException("null category");
             }
-            StoreEntry entry = new StoreEntry(category, item);
-            _stock.Remove(entry);
-            _stock.Add(entry, stock);
-        }
+            if (item == null){
+                throw new ArgumentException("null item");
+            }
+            if (stock < 0){
+                throw new ArgumentException("negative stock");
+            }
+
+            using (var connection = sqlFactory.CreateConnection())
+             {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                try{
+                    command.Connection = connection;
+                    command.CommandText = "insert into store (category,item, stock) Values (@category, @item, @stock)";
+                    command.Parameters.Add(new SqlParameter("@category", category));
+                    command.Parameters.Add(new SqlParameter("@item", item));
+                    command.Parameters.Add(new SqlParameter("@stock", stock));
+                    command.ExecuteNonQuery();
+                }
+                catch(SqlException e)
+                {
+                    //Console.WriteLine(e.Message);
+                    command.CommandText = "update store set stock = @stock where category = @category and item= @item";
+                    command.ExecuteNonQuery();
+                }
+          }
+     }
     }
+
 }
