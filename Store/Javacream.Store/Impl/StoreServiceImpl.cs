@@ -94,13 +94,13 @@ namespace Javacream.Store.Impl{
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
-                command.CommandText = "select distinct category from store";
+                command.CommandText = "select count(*) as count, category from store group by category ";
                 var reader = command.ExecuteReader();
-                List<string> categories = new List<string>();
+                List<string> numbersForCategory = new List<string>();
                 while(reader.Read()){
-                    categories.Add((string)reader["category"]);
+                    numbersForCategory.Add((string)reader["category"] + ":" + reader["count"].ToString());
                 }
-                    return categories;
+                return numbersForCategory;
             }
  
         }
