@@ -1,5 +1,6 @@
 using Conti.AB.IsbnGenerator.API;
 using Conti.AB.Books.API;
+using Conti.AB.Store.API;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -9,13 +10,14 @@ namespace Conti.AB.Books.Impl
     public class BooksService : IBooksService
     {
         private readonly HttpClient client = new HttpClient();
-        public BooksService(IIsbnService isbnService){
+
+        public BooksService(IIsbnService isbnService, IStoreService storeService){
             this._isbnService = isbnService;
-            client.DefaultRequestHeaders.Accept.Clear():
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            this._storeService = storeService; 
         }
 
         private IIsbnService _isbnService;
+        private IStoreService _storeService;
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
         public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
