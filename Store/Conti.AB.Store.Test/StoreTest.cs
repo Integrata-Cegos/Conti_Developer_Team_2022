@@ -15,6 +15,27 @@ public class GetStockTests
     }
 
     [Test]
+    public void RetrieveCategories()
+    {
+        List<string> cats = _storeService.GetCategories();
+        Assert.GreaterOrEqual(cats.Count, 0);
+    }
+
+    [Test]
+    public void GetNumbersOfCategory()
+    {
+        List<string> count = _storeService.GetNumberOfItemsForCategories();
+        Assert.GreaterOrEqual(count.Count, 0);
+    }
+
+    [Test]
+    public void CountBleicherItems()
+    {
+        int count = _storeService.GetNumberOfItemsFor("bleicher");
+        Assert.AreEqual(count, 2);
+    }
+
+    [Test]
     public void GetStockWithCategoryBooksAndItemIsbn1RetrievesStockGreaterThanNull()
     {
         int stock = _storeService.GetStock("books", "ISBN1");
@@ -75,6 +96,5 @@ public class SetStockTests
         _storeService.SetStock(category, item, expected);
         int stock = _storeService.GetStock(category, item);
         Assert.AreEqual(expected, stock);
-
     }
 }
