@@ -9,15 +9,13 @@ public class GetStockTests
     [SetUp]
     public void Setup()
     {
-        _storeService = new StoreService();    
+        _storeService = new DatabaseStoreService();    
     }
-
-
     [Test]
     public void GetStockWithCategoryBooksAndItemIsbn1RetrievesStockGreaterThanNull()
     {
-        int stock = _storeService.GetStock("Books", "Isbn1");
-        Assert.GreaterOrEqual(0, stock);
+        int stock = _storeService.GetStock("books", "ISBN1");
+        Assert.GreaterOrEqual(stock, 0);
     }
    [Test]
     public void GetStockWithNullCategoryThrowsArgumentException()
@@ -39,7 +37,7 @@ public class SetStockTests
     [SetUp]
     public void Setup()
     {
-        _storeService = new StoreService();    
+        _storeService = new DatabaseStoreService();    
     }
 
     [Test]    
