@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
-//using Conti.BK.Store.API;
+using Conti.BK.Store.API;
 using Conti.BK.Books.API;
 namespace Conti.BK.Books.Impl
 {
 
     public class BooksService : IBooksService
     {
+        public BooksService(IIsbnService isbnService, IStoreService storeService){
+            this._isbnService = isbnService;
+         
+        }
         public BooksService(IIsbnService isbnService){
             this._isbnService = isbnService;
          

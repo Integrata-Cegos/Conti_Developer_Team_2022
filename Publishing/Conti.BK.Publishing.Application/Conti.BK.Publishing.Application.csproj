@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Conti.BK.Publishing.Books.IsbnGenerator\Conti.BK.Publishing.Books.IsbnGenerator.csproj" />
     <ProjectReference Include="..\Conti.BK.Publishing.Books.Warehouse\Conti.BK.Publishing.Books.Warehouse.csproj" />
+    <ProjectReference Include="..\..\Utilities\Conti.BK.Utilities\Conti.BK.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

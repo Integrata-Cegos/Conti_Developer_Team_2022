@@ -12,7 +12,7 @@ public static class ApplicationContext{
         randomIsbnService.Prefix = Configuration.GetConfiguration("isbn.prefix");
         randomIsbnService.CountryCode = Configuration.GetConfiguration("isbn.countryCode");
         _isbnService = randomIsbnService;
-        _storeService = new StoreService();
+        _storeService = new DatabaseStoreService();
         _storeService.SetStock("books", new Isbn(4,5,6,7), 100);
         _storeService.SetStock("books", new Isbn(4,5,6,8), 10);
         _booksService = new BooksService(_isbnService, _storeService);

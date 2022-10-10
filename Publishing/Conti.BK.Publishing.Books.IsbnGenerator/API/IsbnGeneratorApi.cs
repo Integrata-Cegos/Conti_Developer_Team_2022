@@ -29,6 +29,8 @@ namespace Conti.BK.IsbnGenerator.API{
         }
         public Isbn(string isbnString){
             this.IsbnString = isbnString;
+            _prefix = "ISBN:";
+            _countryCode = "-world";
         }
         public Isbn(int p1, int p2, int p3, int p4) :this("ISBN:", "-world", p1, p2, p3, p4)
         {}

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.BK.Publishing.Applica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.BK.Publishing.Books.Warehouse", "Conti.BK.Publishing.Books.Warehouse\Conti.BK.Publishing.Books.Warehouse.csproj", "{0EB67A99-E362-434C-83B5-53349EA07C71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.BK.Publishing.Books.IsbnGenerator.Test", "Conti.BK.Publishing.Books.IsbnGenerator.Test\Conti.BK.Publishing.Books.IsbnGenerator.Test.csproj", "{0EB67A99-E362-434C-83B5-53349EA07C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.BK.Publishing.Books.Warehouse.Test", "Conti.BK.Publishing.Books.Warehouse.Test\Conti.BK.Publishing.Books.Warehouse.Test.csproj", "{0EB67A99-E362-434C-83B5-53349EA07C71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

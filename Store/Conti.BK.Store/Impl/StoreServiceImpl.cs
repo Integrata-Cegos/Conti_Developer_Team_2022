@@ -1,4 +1,4 @@
-using Conti.BK.Store.API;
+/*using Conti.BK.Store.API;
 namespace Conti.BK.Store.Impl{
     public class StoreService : IStoreService{
         public class StoreEntry{
@@ -59,4 +59,4 @@ namespace Conti.BK.Store.Impl{
             _stock.Add(entry, stock);
         }
     }
-}
+}*/
