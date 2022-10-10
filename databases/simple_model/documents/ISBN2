@@ -1,0 +1,8 @@
+title: Title2
+pages: 100
+price: 29.99
+available: true
+publisher: publisher1
+authors:
+  - author2
+  - author3
