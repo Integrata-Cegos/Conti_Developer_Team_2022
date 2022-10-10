@@ -17,6 +17,41 @@ public class StoreWebServiceController : ControllerBase
     {
         return _storeService.GetStock(category, item).ToString();
     }
+    [HttpDelete("path/{ItemCategory}/{ItemId}")]
+    public void DeleteItem([FromRoute(Name="ItemCategory")] string category, [FromRoute(Name="ItemId")]string item)
+    {
+        _storeService.DeleteItem(category, item);
+    }
+    [HttpDelete("path/{ItemCategory}")]
+    public void DeleteCategory([FromRoute(Name="ItemCategory")] string category)
+    {
+        _storeService.DeleteCategory(category);
+    }
+
+
+
+    [HttpGet("path/count/{ItemCategory}")]
+    [Produces("text/plain")]
+    public ActionResult<String> GetNumberOfItemsFor([FromRoute(Name="ItemCategory")] string category)
+    {
+        return _storeService.GetNumberOfItemsFor(category).ToString();
+    }
+
+    [HttpGet("path/categories")]
+    [Produces("application/json")]
+    public ActionResult<List<string>> GetCategories()
+    {
+        return _storeService.GetCategories();
+    }
+
+    [HttpGet("path/count/categories")]
+    [Produces("application/json")]
+    public ActionResult<List<string>> GetNumberOfItemsForCategories()
+    {
+        return _storeService.GetNumberOfItemsForCategories();
+    }
+
+
 [HttpPost]
     public ActionResult SetStock([FromHeader(Name="ItemCategory")] string category, [FromHeader(Name="ItemId")] string item, [FromHeader(Name="stock")] int stock){
         _storeService.SetStock(category, item, stock);
