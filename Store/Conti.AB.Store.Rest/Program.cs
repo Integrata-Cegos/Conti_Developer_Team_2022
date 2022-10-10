@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IStoreService>(new StoreService());
+builder.Services.AddSingleton<IStoreService>(new DatabaseStoreService());
 
 var app = builder.Build();
 
