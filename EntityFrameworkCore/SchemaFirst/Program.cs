@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SchemaFirst.Annotations.Entities;
+using SchemaFirst.Annotations.Context;
 Console.WriteLine("Hello EntityFramwork");
-/*using Javacream.Efc;
-Console.WriteLine("Hello EntityFramwork");
-CatContext context = new CatContext(); //Context ist nach Erzeugung "leichtgewichtig", keine Connection wird geöffnet
+var context = new publishingContext(); //Context ist nach Erzeugung "leichtgewichtig", keine Connection wird geöffnet
 Cat thommy = new Cat("Thommy", 9.99, "brown");
 Console.WriteLine(thommy);
 context.Cats.Add(thommy);
@@ -20,5 +20,5 @@ Cat result = context.Cats.Single(cat => cat.Id == 2);//Abfrage basiert auf einer
 Cat result2 = (from cat in context.Cats where cat.Id == 3 select cat).Single<Cat>();//Abfrage basiert auf einer LINQ-Abfrage
 Cat result3 = context.Cats.FromSqlRaw("select * from CATS where id = '4'").Single<Cat>();//Abfrage basiert auf SQL
 Console.WriteLine(result);
-*/
+
 
