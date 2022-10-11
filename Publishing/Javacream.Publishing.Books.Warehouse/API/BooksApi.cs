@@ -5,7 +5,14 @@ namespace Javacream.Books.API
 
     public class Publisher
     {
-        public string Name { get; }
+        public Publisher()
+        {
+
+        }
+
+        public int Id { get; set; }
+
+        public string Name { get; set;}
         private List<Book> _books;
 
         public Publisher(string name)

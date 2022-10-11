@@ -3,7 +3,6 @@ using Javacream.Books.API;
 using Javacream.Books.Impl;
 using Javacream.IsbnGenerator.API;
 using Javacream.IsbnGenerator.Impl;
-using Javacream.Store.API;
 using Javacream.Store.Impl;
 
 

@@ -1,6 +1,7 @@
 using Javacream.IsbnGenerator.API;
 using Javacream.Store.API;
 using Javacream.Books.API;
+using Javacream.Books.Warehouse.Entities;
 namespace Javacream.Books.Impl
 {
 
@@ -12,9 +13,9 @@ namespace Javacream.Books.Impl
         }
         private IIsbnService _isbnService;
         private IStoreService _storeService;
-        private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
         public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
+            var context = new publishingContext();
             if (title == null)
             {
                 throw new ArgumentException("null title");
@@ -33,11 +34,17 @@ namespace Javacream.Books.Impl
             }
             bool available = false;
             Isbn isbn = this._isbnService.Next();
-            Book newBook;
+            var bookEntity = new Javacream.Publishing.Books.Warehouse.Entities.Book();
             try
             {
                 string? topic = options["topic"].ToString();
-                newBook = new SpecialistBook(isbn, title, pages, price, available, topic!);
+                bookEntity.Isbn = isbn.ToString();
+                bookEntity.Title = title;
+                bookEntity.Price = price;
+                bookEntity.Pages = pages;
+                bookEntity.Available = available;
+                bookEntity.Topic = topic;
+                bookEntity.Discriminator = "specialist";
             }
             catch (Exception)
             {
@@ -45,14 +52,26 @@ namespace Javacream.Books.Impl
                 {
                     string? subject = options["subject"].ToString();
                     int year = (int)options["year"];
-                    newBook = new SchoolBook(isbn, title, pages, price, available, year, subject!);
+                    bookEntity.Isbn = isbn.ToString();
+                    bookEntity.Title = title;
+                    bookEntity.Price = price;
+                    bookEntity.Pages = pages;
+                    bookEntity.Available = available;
+                    bookEntity.Subject = subject;
+                    bookEntity.Year = year;
+                    bookEntity.Discriminator = "school";
                 }
                 catch (Exception)
                 {
-                    newBook = new Book(isbn, title, pages, price, available);
+                    bookEntity.Isbn = isbn.ToString();
+                    bookEntity.Title = title;
+                    bookEntity.Price = price;
+                    bookEntity.Pages = pages;
+                    bookEntity.Available = available;
                 }
             }
-            this._books.Add(isbn, newBook);
+            context.Books.Add(bookEntity);
+            context.SaveChanges();
             return isbn;
         }
 
