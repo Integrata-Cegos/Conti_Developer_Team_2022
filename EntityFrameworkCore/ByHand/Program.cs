@@ -15,5 +15,5 @@ context.BleiCats.Remove(schnurri);
 context.SaveChanges();
 List<BleiCat> catList = context.BleiCats.ToList();
 catList.ForEach(bleiCat => Console.WriteLine(bleiCat));
-//BleiCat result = context.BleiCats.Single(bleiCat => bleiCat.Id ==2);
-//Console.WriteLine(result);
+BleiCat result = context.BleiCats.Single(bleiCat => bleiCat.Id ==5);
+Console.WriteLine(result);
