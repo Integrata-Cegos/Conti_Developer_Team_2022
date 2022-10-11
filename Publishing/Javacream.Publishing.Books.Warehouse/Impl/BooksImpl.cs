@@ -1,7 +1,7 @@
 using Javacream.IsbnGenerator.API;
 using Javacream.Store.API;
 using Javacream.Books.API;
-using Javacream.Books.Warehouse.Entities;
+using Javacream.Publishing.Books.Warehouse.Entities;
 namespace Javacream.Books.Impl
 {
 
@@ -75,10 +75,10 @@ namespace Javacream.Books.Impl
             return isbn;
         }
 
-        public Book FindBookByIsbn(Isbn isbn)
+        public Javacream.Books.API.Book FindBookByIsbn(Isbn isbn)
         {
             string isbnAsString = isbn.ToString();
-            Book book = assemble(context.Books.Single(b => b.Isbn == isbnAsString));
+            Javacream.Books.API.Book book = assemble(context.Books.Single(b => b.Isbn == isbnAsString));
             this.SetAvailability(book);
             return book;
         }
@@ -88,21 +88,21 @@ namespace Javacream.Books.Impl
             context.Books.Remove(context.Books.Single(b => b.Isbn == isbnAsString));
         }
 
-        public List<Book> FindBooksByTitle(string title)
+        public List<Javacream.Books.API.Book> FindBooksByTitle(string title)
         {
-            return context.Books.Where(book => book.Title = title).ToList();
+            return assemble(context.Books.Where(book => book.Title == title).ToList());
         }
-        public List<Book> FindBooksByPriceRange(double minPrice, double maxPrice)
+        public List<Javacream.Books.API.Book> FindBooksByPriceRange(double minPrice, double maxPrice)
         {
-            return context.Books.Where(book => book.Price > minPrice && book.Price < maxPrice).ToList();
+            return assemble(context.Books.Where(book => book.Price > minPrice && book.Price < maxPrice).ToList());
         }
 
-        public void UpdateBook(Book book)
+        public void UpdateBook(Javacream.Books.API.Book book)
         {
             context.Books.Add(assemble(book));
             context.SaveChanges();
         }
-        private Book SetAvailability(Book book)
+        private Javacream.Books.API.Book SetAvailability(Javacream.Books.API.Book book)
         {
             int stockForIsbn = this._storeService.GetStock("books", book.Isbn);
             if (stockForIsbn > 0)
@@ -116,7 +116,7 @@ namespace Javacream.Books.Impl
             return book;
         }
 
-        private Javacream.Publishing.Books.Warehouse.Entities.Book assemble(Book b)
+        private Javacream.Publishing.Books.Warehouse.Entities.Book assemble(Javacream.Books.API.Book b)
         {
             var bookEntity = new Javacream.Publishing.Books.Warehouse.Entities.Book();
             bookEntity.Isbn = b.Isbn.ToString();
@@ -126,7 +126,7 @@ namespace Javacream.Books.Impl
             return bookEntity;
 
         }
-        private Book assemble(Javacream.Publishing.Books.Warehouse.Entities.Book b)
+        private Javacream.Books.API.Book assemble(Javacream.Publishing.Books.Warehouse.Entities.Book b)
         {
             string isbnAsString = b.Isbn;
             string[] splitted = isbnAsString.Split(":");
@@ -138,12 +138,12 @@ namespace Javacream.Books.Impl
             int part4 = Int32.Parse(partsAndCountryCode[3]);
             string countryCode = partsAndCountryCode[4];
             Isbn isbn = new Isbn(prefix, countryCode, part1, part2, part3, part4);
-            var book = new Book(isbn, b.Title, (int)b.Pages, (double)b.Price, false);
+            var book = new Javacream.Books.API.Book(isbn, b.Title, (int)b.Pages, (double)b.Price, false);
             return book;
 
         }
  
-        private List<Book> assemble(List<Javacream.Publishing.Books.Warehouse.Entities.Book> books)
+        private List<Javacream.Books.API.Book> assemble(List<Javacream.Publishing.Books.Warehouse.Entities.Book> books)
         {
             return books.Select(b => assemble(b)).ToList();
 

@@ -34,9 +34,9 @@ public class BooksWebServiceController : ControllerBase
     }
 
     [HttpDelete]
-    public ActionResult DeleteBookByIsbn([FromHeader(Name = "isbn")]Isbn isbn)
+    public ActionResult DeleteBookByIsbn([FromHeader(Name = "prefix")]string prefix,[FromHeader(Name = "countryCode")]string countryCode, [FromHeader(Name = "part1")]int part1, [FromHeader(Name = "part2")]int part2,[FromHeader(Name = "part3")]int part3,[FromHeader(Name = "part4")]int part4)
     {
-        _booksService.DeleteBookByIsbn(isbn);
+        _booksService.DeleteBookByIsbn(new Isbn(prefix, countryCode, part1, part2, part3, part4));
         return new EmptyResult();
     }
     [HttpGet("byTitle")]
@@ -62,9 +62,9 @@ public class BooksWebServiceController : ControllerBase
     }
 
     [HttpPut]
-    public ActionResult UpdatePrice([FromHeader(Name = "isbn")]Isbn isbn, [FromHeader(Name = "price")] double newPrice)
+    public ActionResult UpdatePrice([FromHeader(Name = "prefix")]string prefix,[FromHeader(Name = "countryCode")]string countryCode, [FromHeader(Name = "part1")]int part1, [FromHeader(Name = "part2")]int part2,[FromHeader(Name = "part3")]int part3,[FromHeader(Name = "part4")]int part4, [FromHeader(Name = "price")] double newPrice)
     {
-        var book = _booksService.FindBookByIsbn(isbn);
+        var book = _booksService.FindBookByIsbn(new Isbn(prefix, countryCode, part1, part2, part3, part4));
         book.Price = newPrice;
         _booksService.UpdateBook(book);
         return new EmptyResult();
