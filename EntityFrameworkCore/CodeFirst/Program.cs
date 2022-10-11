@@ -16,7 +16,7 @@ context.SaveChanges();
 List<Cat> catList = context.Cats.ToList();
 catList.ForEach(cat => Console.WriteLine(cat));
 Cat result = context.Cats.Single(cat => cat.Id == 2);//Abfrage basiert auf einer LINQ-Methode
-//Cat result2 = (from cat in context.Cats where cat.Id == 3).Single<Cat>();//Abfrage basiert auf einer LINQ-Abfrage
+Cat result2 = (from cat in context.Cats where cat.Id == 3 select cat).Single<Cat>();//Abfrage basiert auf einer LINQ-Abfrage
 Cat result3 = context.Cats.FromSqlRaw("select * from CATS where id = '4'").Single<Cat>();//Abfrage basiert auf SQL
 Console.WriteLine(result);
 
