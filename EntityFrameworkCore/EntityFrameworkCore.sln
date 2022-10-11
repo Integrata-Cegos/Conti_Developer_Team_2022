@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByHand", "ByHand\ByHand.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{93E68103-1D80-4869-8E31-B8527DFB0D69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaFirst", "SchemaFirst\SchemaFirst.csproj", "{249C7D58-5D9F-46D7-ABA1-1CC231A24C67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,13 @@ Global
 		{93E68103-1D80-4869-8E31-B8527DFB0D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93E68103-1D80-4869-8E31-B8527DFB0D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93E68103-1D80-4869-8E31-B8527DFB0D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC715E7E-00A6-4709-8D41-4F0E4A1B641D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC715E7E-00A6-4709-8D41-4F0E4A1B641D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC715E7E-00A6-4709-8D41-4F0E4A1B641D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC715E7E-00A6-4709-8D41-4F0E4A1B641D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249C7D58-5D9F-46D7-ABA1-1CC231A24C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249C7D58-5D9F-46D7-ABA1-1CC231A24C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249C7D58-5D9F-46D7-ABA1-1CC231A24C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249C7D58-5D9F-46D7-ABA1-1CC231A24C67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

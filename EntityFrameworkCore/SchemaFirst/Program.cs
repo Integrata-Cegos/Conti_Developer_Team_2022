@@ -1,0 +1,27 @@
+﻿using SchemaFirst.Annotations.Entities;
+using SchemaFirst.Annotations.Context;
+using Microsoft.EntityFrameworkCore;
+
+Console.WriteLine("Hello EntityFramework");
+var context = new publishingContext();
+Bleicat schnurri = new Bleicat("Schnurri", 5.00, "schwarz-weiß");
+Console.WriteLine(schnurri);
+context.Bleicats.Add(schnurri);
+Console.WriteLine(schnurri);
+context.SaveChanges();
+Console.WriteLine(schnurri);
+schnurri.Weight = 6.5;
+Console.WriteLine(schnurri);
+context.SaveChanges();
+context.Bleicats.Remove(schnurri);
+context.SaveChanges();
+List<Bleicat> catList = context.Bleicats.ToList();
+catList.ForEach(bleicat => Console.WriteLine(bleicat));
+Bleicat result = context.Bleicats.Single(bleicat => bleicat.Id ==5);
+Bleicat result2 = (from bleicat in context.Bleicats where bleicat.Id == 3 select bleicat).Single<Bleicat>();
+Bleicat result3 = context.Bleicats.FromSqlRaw("select * from BLEICATS where id = '4'").Single<Bleicat>();
+Console.WriteLine(result);
+Console.WriteLine("#####");
+Console.WriteLine(result2);
+Console.WriteLine("#####");
+Console.WriteLine(result3);
