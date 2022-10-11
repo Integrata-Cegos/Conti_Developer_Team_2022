@@ -5,4 +5,4 @@
 
 -- create table MESSAGES (MESSAGE varchar (250))
 -- insert into MESSAGES values('Hello World')
--- select * from MESSAGES
+--select * from MESSAGES
