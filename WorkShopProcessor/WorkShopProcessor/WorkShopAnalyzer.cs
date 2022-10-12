@@ -7,27 +7,29 @@ using System.Threading.Tasks;
 namespace WorkShopProcessor;
 public class WorkShopAnalyzer : IWorkShopAnalyzer
 {
-    public int WordCount(string input)
+    public string WordCount(string input)
     {
         if (input == null)
         {
             throw new ArgumentNullException("No Argument given");
         }
 
-        return input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Count();
+        return $"{input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Count()} Wörter vorhanden.";
     }
 
-    public int WordStartsWith(string input, string startString)
+    public string WordStartsWith(string input, string startString)
     {
+        int count = 0;
         if (input == null || startString == null)
         {
             throw new ArgumentNullException("No Argument given");
         }
         List<string> workingList = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-        return workingList.Where(x => x.StartsWith(startString)).Count();
+        count =  workingList.Where(x => x.StartsWith(startString)).Count();
+        return $"{count} Wörter beginnen mit {startString}";
     }
 
-    public int WordsContains(string input, string containString)
+    public string WordContains(string input, string containString)
     {
         int returnvalue = 0;
         if (input == null || containString == null)
@@ -42,7 +44,7 @@ public class WorkShopAnalyzer : IWorkShopAnalyzer
                 returnvalue++;
             }
         }
-        return returnvalue;
+        return $"{returnvalue} Wörter enthalten {containString}";
     }
 
     public string LetterCount(string input)

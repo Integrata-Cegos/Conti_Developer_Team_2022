@@ -41,7 +41,7 @@ public class WordProcessor
 
         try
         {
-            WorkShopTransformer transformer = new WorkShopTransformer();
+            WorkShopTransformer transformer = new ();
             var transformedData = typeof(WorkShopTransformer).GetMethod(Config.Transformer).Invoke(transformer, new object[] { Data });
             Data = transformedData.ToString();
          }
@@ -68,7 +68,6 @@ public class WordProcessor
                 List<object> args = new List<object>();
                 args.Add(Data);
                 args.Add(option);
-                var parameterTypes = args.ToList().ConvertAll(a => a.GetType()).ToArray();
                 returnvalue = typeof(WorkShopAnalyzer).GetMethod(method).Invoke(analyzer, new object[] {Data, option});
             }
             Analysed = returnvalue.ToString();
