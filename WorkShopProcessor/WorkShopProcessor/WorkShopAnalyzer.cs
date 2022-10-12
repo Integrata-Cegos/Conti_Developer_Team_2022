@@ -52,7 +52,7 @@ public class WorkShopAnalyzer : IWorkShopAnalyzer
         {
             throw new ArgumentNullException("No Argument given");
         }
-        IEnumerable<string> collection = input.ToUpper().GroupBy(x => x).Where(x => x.Key != ' ').Select(x => $"Anzahl Wörter, die mit ‘{x.Key}’ beginnen: {x.Count()}");
+        IEnumerable<string> collection = input.ToUpper().GroupBy(x => x).Where(x => x.Key != ' ').Select(x => $"{x.Key} vorhanden: {x.Count()}");
 
         foreach (var item in collection)
         {

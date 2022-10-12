@@ -1,9 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using WorkShopProcessor;
+﻿using WorkShopProcessor;
 
 var arguments = Environment.GetCommandLineArgs();
-
+#if !DEBUG
 if (Environment.GetCommandLineArgs().Count() != 2)
 {
     Console.WriteLine("Please specify configuration File");
@@ -17,7 +15,15 @@ else
         processor.Analyse();
         processor.Report();
 }
+#else
+
+WordProcessor processor = new(new WorkShopReaderConfig("SampleConfig2.cfg"));
+processor.Read();
+processor.Transform();
+processor.Analyse();
+processor.Report();
+
+Console.ReadKey();
 
 
-
-
+#endif
