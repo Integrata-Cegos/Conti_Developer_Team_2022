@@ -2,6 +2,14 @@ using WordProcessor.Api;
 using System.Text.RegularExpressions;
 namespace WordProcessor.Impl.Transformers{
 
+    public class NopTransformer: Transformer
+    {
+        public string Transform(string input)
+        {
+            return input;
+        }
+
+    }
     public class ToUpper: Transformer{
         public string Transform(string input)
         {
