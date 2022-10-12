@@ -1,0 +1,5 @@
+﻿Der Wordprozessor soll so geschrieben werden, dass die einzelnen Schritte an Hand eines Baukastensystems konfiguriert werden können. Es bietet sich an, die Schritte durch eine Schnittstelle zu abstrahieren, z.B.
+Reader mit der Methode string Read() o.ä.
+Transformer mit der Methode string Transform(string) o.ä.
+Analyzer mit der Methode Report Analyze(string) o.ä. Report eine Datenstruktur mit z.B. den Attributen string Detail, string Result, string Configuration, DateTime Created, 
+Reporter mit der Methode Write(Report) o.ä.
