@@ -17,4 +17,21 @@ namespace WordProcessor.Impl.Analyzers
             return report;
         }
     }
+    public class WordStartsWithAnalyzer: Analyzer
+    {
+        private string Configuration;
+        private string StartsWith;
+        public WordStartsWithAnalyzer(string configuration, string startsWith)
+        {
+            this.Configuration = configuration;
+            this.StartsWith = startsWith;
+        }
+        public Report Analyze(string input)
+        {
+
+            int result = Array.FindAll(input.Split(" "), s => s.StartsWith(StartsWith)).Length;
+            var report = new Report(result.ToString(), $"Number of words: {result}", this.Configuration, new DateTime());
+            return report;
+        }
+    }
 }
