@@ -1,0 +1,4 @@
+Reader=Console
+Transformer=Test
+Analyzer=WordStartsWith;A
+Reporter=Console
