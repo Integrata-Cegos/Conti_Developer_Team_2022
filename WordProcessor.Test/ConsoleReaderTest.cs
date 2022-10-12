@@ -8,7 +8,7 @@ public class ConsoleReaderTest
     public void testReader()
     {
         string text = "Hello World!";
-        var stringReader = new StringReader(text);
+        var stringReader = new StringReader(text+"\n");
         var stringWriter = new StringWriter();
         Console.SetIn(stringReader);
         Console.SetOut(stringWriter);
