@@ -1,6 +1,6 @@
 using WordProcessor.Impl.Analyzers;
 using NUnit.Framework;
-namespace WordProcessor.Impl.Transformers.Test;
+namespace WordProcessor.Impl.Analyzers.Test;
 
 public class WordCountAnalyzerTest
 {
