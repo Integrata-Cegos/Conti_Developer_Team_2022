@@ -1,0 +1,4 @@
+Reader=Console
+Transformer=ToUpper
+Analyzer=WordStartsWith;A
+Reporter=Console
