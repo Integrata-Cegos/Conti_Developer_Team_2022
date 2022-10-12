@@ -34,4 +34,23 @@ namespace WordProcessor.Impl.Analyzers
             return report;
         }
     }
+
+    public class WordContainsAnalyzer: Analyzer
+    {
+        private string Configuration;
+        private string Contains;
+        public WordContainsAnalyzer(string configuration, string contains)
+        {
+            this.Configuration = configuration;
+            this.Contains = contains;
+        }
+        public Report Analyze(string input)
+        {
+
+            int result = Array.FindAll(input.Split(" "), s => s.Contains(Contains)).Length;
+            var report = new Report(result.ToString(), $"Number of words: {result}", this.Configuration, new DateTime());
+            return report;
+        }
+    }
+
 }
