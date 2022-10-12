@@ -1,5 +1,4 @@
 using WordProcessor.Api;
-using System.Text.RegularExpressions;
 namespace WordProcessor.Impl.Reporters{
     public class ConsoleReporter: Reporter
     {
@@ -21,7 +20,7 @@ namespace WordProcessor.Impl.Reporters{
         }
         public void Write(Report report)
         {
-            string[] output = {report.Result, report.Detail, report.Created.ToLongTimeString(), report.Configuration};
+            string[] output = {report.Result, report.Detail, report.Created.ToString(), report.Configuration};
             File.WriteAllLines(this.OutputFile, output);
         }
     }

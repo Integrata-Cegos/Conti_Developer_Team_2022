@@ -9,10 +9,12 @@ namespace WordProcessor.Impl.Readers{
             Console.WriteLine("Enter text, empty line to finish:");
             string result = "";
             string? s = "";
-            while((s = Console.ReadLine()) != null)
+            while((s = Console.ReadLine().Trim()) != "")
             {
-                result += s;
+                result = result + s + "\n";
+
             } 
+            Console.WriteLine(result);
             return result;
         }
     }

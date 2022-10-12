@@ -42,7 +42,7 @@ namespace WordProcessor.Impl{
                 else if (configuration.StartsWith("File"))
                 {
                     string param = configuration.Split(";")[1];
-                    this.Reader = new FileReader(param);
+                    this.Reader = new FileReader("c:\\_training\\" + param);
                 }else
                 {
                     throw new ArgumentException($"invalid reader configuration: {configuration}");
@@ -123,7 +123,7 @@ namespace WordProcessor.Impl{
                 else if (configuration.StartsWith("File"))
                 {
                     string param = configuration.Split(";")[1];
-                    this.Reporter = new FileReporter(param);
+                    this.Reporter = new FileReporter("c:\\_training\\" + param);
                 }else
                 {
                     throw new ArgumentException($"invalid reporter configuration: {configuration}");

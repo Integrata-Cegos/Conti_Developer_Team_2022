@@ -11,9 +11,11 @@ namespace WordProcessor.Impl.Analyzers
         }
         public Report Analyze(string input)
         {
+            input = input.Replace("\n", " ");
+            input = input.Replace("\r\n", " ");
             string[] numberOfWords = input.Split(" ");
             int result = numberOfWords.Length;
-            var report = new Report(result.ToString(), $"Number of words: {result}", this.Configuration, new DateTime());
+            var report = new Report(result.ToString(), $"Number of words: {result}", this.Configuration, DateTime.Now);
             return report;
         }
     }
@@ -29,6 +31,9 @@ namespace WordProcessor.Impl.Analyzers
         public Report Analyze(string input)
         {
 
+            input = input.Replace("\n", " ");
+            input = input.Replace("\r\n", " ");
+            input.Trim();
             int result = Array.FindAll(input.Split(" "), s => s.StartsWith(StartsWith)).Length;
             var report = new Report(result.ToString(), $"Number of words starting with {this.StartsWith}: {result}", this.Configuration, DateTime.Now);
             return report;
@@ -46,7 +51,9 @@ namespace WordProcessor.Impl.Analyzers
         }
         public Report Analyze(string input)
         {
-
+            input = input.Replace("\n", " ");
+            input = input.Replace("\r\n", " ");
+            input.Trim();
             int result = Array.FindAll(input.Split(" "), s => s.Contains(Contains)).Length;
             var report = new Report(result.ToString(), $"Number of words containing {this.Contains}: {result}", this.Configuration, DateTime.Now);
             return report;
