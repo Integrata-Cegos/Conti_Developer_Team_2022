@@ -30,7 +30,7 @@ namespace WordProcessor.Impl.Analyzers
         {
 
             int result = Array.FindAll(input.Split(" "), s => s.StartsWith(StartsWith)).Length;
-            var report = new Report(result.ToString(), $"Number of words: {result}", this.Configuration, new DateTime());
+            var report = new Report(result.ToString(), $"Number of words starting with {this.StartsWith}: {result}", this.Configuration, new DateTime());
             return report;
         }
     }
@@ -48,9 +48,40 @@ namespace WordProcessor.Impl.Analyzers
         {
 
             int result = Array.FindAll(input.Split(" "), s => s.Contains(Contains)).Length;
-            var report = new Report(result.ToString(), $"Number of words: {result}", this.Configuration, new DateTime());
+            var report = new Report(result.ToString(), $"Number of words containing {this.Contains}: {result}", this.Configuration, new DateTime());
             return report;
         }
     }
+
+    public class LetterCountAnalyzer: Analyzer
+    {
+        private string Configuration;
+        public LetterCountAnalyzer(string configuration)
+        {
+            this.Configuration = configuration;
+        }
+        public Report Analyze(string input)
+        {
+
+            var result = new Dictionary<char, int>();
+            foreach (char c in input)
+            {   int number;
+                var containsChar = result.TryGetValue(c, out number);
+                if (containsChar)
+                {
+                    number++;
+                    result[c] = number;
+                }
+                else
+                {
+                    result.Add(c, 1);
+                }
+            }
+            var resultString = string.Join(Environment.NewLine, result);
+            var report = new Report(resultString, $"LetterCount: {resultString}", this.Configuration, new DateTime());
+            return report;
+        }
+    }
+
 
 }
