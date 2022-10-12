@@ -47,7 +47,7 @@ namespace Conti.BK.Store.Impl{
             int stock = 0;
             if(item == null || category == String.Empty || category == null){
                 throw new ArgumentException("stock was null");
-                return 0;
+                
             }
             using(var connection = dbProviderFactory.CreateConnection())
             {
@@ -87,7 +87,7 @@ namespace Conti.BK.Store.Impl{
 
                 DbCommand command = dbProviderFactory.CreateCommand();
                 command.Connection = connection;
-                command.CommandText = "UPDATE STORE SET STOCK = @stock WHERE CATEGORY = @cat AND ITEM = @item; IF @@ROWCOUNT = 0 BEGIN INSERT INTO STORE(CATEGORY,ITEM,STOCK) VALUES(@cat,@item,@stock); END;";
+                command.CommandText = "UPDATE STORE SET STOCK = @stock WHERE CATEGORY = @cat AND ITEM = @item; IF @@ROWCOUNT = 0 INSERT INTO STORE(CATEGORY,ITEM,STOCK) VALUES(@cat,@item,@stock);";
                 command.Parameters.Add(new SqlParameter("@cat",category));
                 command.Parameters.Add(new SqlParameter("@item",item.ToString()));
                 command.Parameters.Add(new SqlParameter("@stock",stock));

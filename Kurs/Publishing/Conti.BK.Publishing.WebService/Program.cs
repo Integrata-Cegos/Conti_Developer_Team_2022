@@ -14,7 +14,7 @@ var isbn = new Conti.BK.IsbnGenerator.Impl.RandomIsbnService();
 isbn.Prefix="ISBN:";
 isbn.CountryCode="-de";
 builder.Services.AddSingleton<IIsbnService>(isbn);
-var store = new Conti.BK.Store.Impl.StoreService();
+var store = new Conti.BK.Store.Impl.DatabaseStoreService();
 builder.Services.AddSingleton<IStoreService>(store);
 builder.Services.AddSingleton<IBooksService>(new Conti.BK.Books.Impl.BooksService(isbn));
 

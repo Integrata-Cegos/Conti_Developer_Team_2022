@@ -5,22 +5,25 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Conti.BK.Store.API;
 using Conti.BK.Books.API;
+//using Conti.BK.Publishing.Books.Warehouse.Entities;
+using Microsoft.EntityFrameworkCore;
 namespace Conti.BK.Books.Impl
 {
 
     public class BooksService : IBooksService
     {
+        Conti.BK.Publishing.Books.Warehouse.Entities.publishingContext _context;
         public BooksService(IIsbnService isbnService, IStoreService storeService){
             this._isbnService = isbnService;
-         
+            this._context = new Conti.BK.Publishing.Books.Warehouse.Entities.publishingContext();
         }
         public BooksService(IIsbnService isbnService){
             this._isbnService = isbnService;
-         
+         this._context = new Conti.BK.Publishing.Books.Warehouse.Entities.publishingContext();
         }
         private IIsbnService _isbnService;
 
-        private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
+        //private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
         public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
             if (title == null)
@@ -60,34 +63,40 @@ namespace Conti.BK.Books.Impl
                     newBook = new Book(isbn, title, pages, price, available);
                 }
             }
-            this._books.Add(isbn, newBook);
+            this._context.Books.Add(newBook);
+            //this._books.Add(isbn, newBook);
             return isbn;
         }
         public void UpdateBook(Book book)
         {
-            _books.Remove(book.Isbn);
-            _books.Add(book.Isbn, book);
+            _context.Books.Remove(book);
+            _context.Books.Add(book);
         }
         public Book FindBookByIsbn(Isbn isbn)
         {
-            Book book = this._books[isbn];
+           // Book book = this._books[isbn];
+            Book book = this._context.Books.Single(x => x.Isbn == isbn.ToString());
             this.SetAvailability(book);
             return book;
         }
         public void DeleteBookByIsbn(Isbn isbn)
         {
-            this._books.Remove(isbn);
+            this._context.Books.Remove(this._context.Books.Single(x=>x.Isbn == isbn.ToString()));
         }
 
         public List<Book> FindBooksByTitle(string title)
         {
-            var bookList = this._books.Values.ToList();
-            return bookList.FindAll(book => book.Title.Equals(title)).ConvertAll(book => SetAvailability(book));
+            var bookList = this._context.Books.Where(x=>x.Title.Contains(title)).ToList().ConvertAll(book => SetAvailability(book));
+            return bookList;
+            //var bookList = this._books.Values.ToList();
+            //return bookList.FindAll(book => book.Title.Equals(title)).ConvertAll(book => SetAvailability(book));
         }
         public List<Book> FindBooksByPriceRange(double minPrice, double maxPrice)
         {
-            var bookList = this._books.Values.ToList();
-            return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice).ConvertAll(this.SetAvailability);
+            var bookList = this._context.Books.Where(x=>x.Price > minPrice && x.Price < maxPrice).ToList();
+            return bookList;
+           // var bookList = this._books.Values.ToList();
+           // return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice).ConvertAll(this.SetAvailability);
         }
 
         private Book SetAvailability(Book book)
