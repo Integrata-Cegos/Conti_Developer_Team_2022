@@ -6,7 +6,7 @@ namespace Conti.BK.WordProcessor.Test;
 
 public class ConfigTests
 {
-    IConfigReader reader;
+    IConfigReader reader = new FileConfigReader("");
     [SetUp]
     public void Setup()
     {
