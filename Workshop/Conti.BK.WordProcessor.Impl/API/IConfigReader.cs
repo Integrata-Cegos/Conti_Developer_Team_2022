@@ -1,4 +1,4 @@
-namespace Conti.BK.WordProcessor.Content;
+namespace Conti.BK.WordProcessor.Config;
 
 public interface IConfigReader
 {

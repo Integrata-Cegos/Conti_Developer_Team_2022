@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Conti.BK.WordProcessor\Conti.BK.WordProcessor.csproj" />
+    <ProjectReference Include="..\Conti.BK.WordProcessor.Impl\Conti.BK.WordProcessor.Impl.csproj" />
   </ItemGroup>
 
 </Project>

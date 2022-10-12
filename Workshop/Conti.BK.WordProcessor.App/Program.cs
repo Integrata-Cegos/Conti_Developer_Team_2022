@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Conti.BK.WordProcessor.Content;
-
+using Conti.BK.WordProcessor.Config;
 Console.WriteLine("Hello, World!");
 IConfigReader _configReader = new FileConfigReader("config.txt");
 ContentConfig _config = _configReader.Read();
