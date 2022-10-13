@@ -51,7 +51,7 @@ public class WordProcessor
         }
     }
 
-    internal void Analyse()
+    public void Analyse()
     {
         try
         {
@@ -65,9 +65,6 @@ public class WordProcessor
             {
                 string method = Config.Analyzer.Split(';')[0];
                 string option = Config.Analyzer.Split(';')[1];
-                List<object> args = new List<object>();
-                args.Add(Data);
-                args.Add(option);
                 returnvalue = typeof(WorkShopAnalyzer).GetMethod(method).Invoke(analyzer, new object[] {Data, option});
             }
             Analysed = returnvalue.ToString();
@@ -78,7 +75,7 @@ public class WordProcessor
         }
     }
 
-    internal void Report()
+    public void Report()
     {
         StringBuilder report = new();
 
