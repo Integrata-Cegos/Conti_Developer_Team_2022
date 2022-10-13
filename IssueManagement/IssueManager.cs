@@ -37,6 +37,7 @@ public class IssueManager : IIssueManager
         }
         try
         {
+            db.ChangeTracker.Clear();
             User user = new User { Username = userName, Firstname = firstName, Lastname = lastName };
             db.Add(user);
             db.SaveChanges();
@@ -45,6 +46,10 @@ public class IssueManager : IIssueManager
         catch (Exception ex)
         {
             throw new Exception("Error Creating User in Database!", ex);
+        }
+        finally
+        {
+            db.ChangeTracker.Clear();
         }
     }
 
@@ -76,7 +81,7 @@ public class IssueManager : IIssueManager
         }
     }
 
-    public void ChangeIssueStatus(Issue issue, string status)
+    public Issue ChangeIssueStatus(Issue issue, string status)
     {
         if (issue == null || status == null)
         {
@@ -86,9 +91,11 @@ public class IssueManager : IIssueManager
         {
             issue.Status = status;
             db.SaveChanges();
+            return issue;
         }
         catch (Exception ex)
         {
+            db.ChangeTracker.Clear();
             throw new Exception("Error changing issue status in database!", ex);
         }
     }
