@@ -100,6 +100,25 @@ public class IssueManager : IIssueManager
         }
     }
 
+    public Issue ChangeIssuePriority(Issue issue, string priority)
+    {
+        if (issue == null || priority == null)
+        {
+            throw new ArgumentNullException();
+        }
+        try
+        {
+            issue.Priority = priority;
+            db.SaveChanges();
+            return issue;
+        }
+        catch (Exception ex)
+        {
+            db.ChangeTracker.Clear();
+            throw new Exception("Error changing issue priority in database!", ex);
+        }
+    }
+
     public List<Issue> AllIssuesWithStatus(string status)
     {
         if (status == null)
