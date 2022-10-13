@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.BK.IssueManagement.App", "Conti.BK.IssueManagement.App\Conti.BK.IssueManagement.App.csproj", "{90A9462E-555F-45F9-B0C0-E74BE4AB1E31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.BK.IssueManagement.Impl", "Conti.BK.IssueManagement.Impl\Conti.BK.IssueManagement.Impl.csproj", "{D911DF58-4935-479D-B5F3-C358B5218811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conti.BK.IssueManagement.Test", "Conti.BK.IssueManagement.Test\Conti.BK.IssueManagement.Test.csproj", "{95AB8EE5-D300-4645-AABB-23C984354A1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90A9462E-555F-45F9-B0C0-E74BE4AB1E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A9462E-555F-45F9-B0C0-E74BE4AB1E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A9462E-555F-45F9-B0C0-E74BE4AB1E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A9462E-555F-45F9-B0C0-E74BE4AB1E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D911DF58-4935-479D-B5F3-C358B5218811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D911DF58-4935-479D-B5F3-C358B5218811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D911DF58-4935-479D-B5F3-C358B5218811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D911DF58-4935-479D-B5F3-C358B5218811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95AB8EE5-D300-4645-AABB-23C984354A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95AB8EE5-D300-4645-AABB-23C984354A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95AB8EE5-D300-4645-AABB-23C984354A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95AB8EE5-D300-4645-AABB-23C984354A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
