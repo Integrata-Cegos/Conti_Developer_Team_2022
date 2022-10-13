@@ -9,6 +9,11 @@ namespace IssueManagement
     [Table("ISSUES")]
     public partial class Issue
     {
+        public Issue()
+        {
+            Histories = new HashSet<History>();
+        }
+
         [Key]
         [Column("ID")]
         public int Id { get; set; }
@@ -30,5 +35,7 @@ namespace IssueManagement
         [ForeignKey("Assignee")]
         [InverseProperty("Issues")]
         public virtual User? AssigneeNavigation { get; set; }
+        [InverseProperty("IssueNavigation")]
+        public virtual ICollection<History> Histories { get; set; }
     }
 }

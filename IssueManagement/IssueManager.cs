@@ -143,4 +143,20 @@ public class IssueManager : IIssueManager
         return db.Users.Where(x => userswithissuesgreaterthan2.Contains(x.Id)).ToList();
     }
 
+    public List<History> ShowHistoryForIssue(Issue issue)
+    {
+        if (issue == null)
+        {
+            throw new ArgumentNullException();
+        }
+        try
+        {
+            return db.Histories.Where(x => x.IssueNavigation == issue).ToList();
+        }
+        catch (Exception)
+        {
+            throw new Exception("Error getting History for Issue");
+        }
+
+    }
 }

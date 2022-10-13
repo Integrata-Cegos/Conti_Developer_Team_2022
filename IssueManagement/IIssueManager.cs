@@ -10,4 +10,5 @@ public interface IIssueManager
     User CreateUser(string userName, string firstName, string lastName);
     List<User> SelectOverloadedUsers();
     List<User> SelectUsersWithoutIssues();
+    List<History> ShowHistoryForIssue(Issue issue);
 }

@@ -16,6 +16,7 @@ namespace IssueManagement
         {
         }
 
+        public virtual DbSet<History> Histories { get; set; } = null!;
         public virtual DbSet<Issue> Issues { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
 
@@ -30,6 +31,17 @@ namespace IssueManagement
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<History>(entity =>
+            {
+                entity.Property(e => e.Timestamp).HasDefaultValueSql("(getdate())");
+
+                entity.HasOne(d => d.IssueNavigation)
+                    .WithMany(p => p.Histories)
+                    .HasForeignKey(d => d.Issue)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__HISTORY__ISSUE__7E42ABEE");
+            });
+
             modelBuilder.Entity<Issue>(entity =>
             {
                 entity.HasOne(d => d.AssigneeNavigation)
