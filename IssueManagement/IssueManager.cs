@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IssueManagement;
-public class IssueManager
+public class IssueManager : IIssueManager
 {
     IssueContext db = new IssueContext();
 
@@ -109,10 +109,10 @@ public class IssueManager
 
     public List<User> SelectOverloadedUsers()
     {
-        var nonemptyissueusers =  db.Users.Where(x => db.Issues.Select(b => b.Assignee).Contains(x.Id)).SelectMany(o => o.Issues);
+        var nonemptyissueusers = db.Users.Where(x => db.Issues.Select(b => b.Assignee).Contains(x.Id)).SelectMany(o => o.Issues);
         var groupedusersbyissues = from User in nonemptyissueusers
-                    group User by User.Assignee into usergroup
-                    select new { User = usergroup.Key, Count = usergroup.Count() };
+                                   group User by User.Assignee into usergroup
+                                   select new { User = usergroup.Key, Count = usergroup.Count() };
         var userswithissuesgreaterthan2 = groupedusersbyissues.Where(x => x.Count > 2).Select(x => x.User).ToList();
         return db.Users.Where(x => userswithissuesgreaterthan2.Contains(x.Id)).ToList();
     }
