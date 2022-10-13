@@ -1,1 +1,0 @@
-﻿Der Wordprozessor soll so geschrieben werden, dass die einzelnen Schritte an Hand eines Baukastensystems konfiguriert werden können. Es bietet sich an, die Schritte durch eine 
