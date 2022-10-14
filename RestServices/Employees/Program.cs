@@ -1,12 +1,63 @@
 using Employees;
+using Employees.Models;
+using Employees.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Data;
+using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+using System.Security.Claims;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateActor = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
+builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Description = "Bearer Authentication with JWT Token",
+        Type = SecuritySchemeType.Http
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Id = "Bearer",
+                    Type = ReferenceType.SecurityScheme
+                }
+            },
+            new List<string>()
+        }
+    });
+});
+builder.Services.Configure<MyConfig>(builder.Configuration.GetSection("MyConfig"));
 
 var app = builder.Build();
 
@@ -16,10 +67,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseHttpsRedirection();
 
 EmployeeService employeeService = new();
+
+app.MapPost("/login",
+(UserLogin user, IUserService service) => Login(user, service))
+    .Accepts<UserLogin>("application/json")
+    .Produces<string>();
 
 static bool ValidateHomepage(string homepage)
 {
@@ -28,7 +85,7 @@ static bool ValidateHomepage(string homepage)
         && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 }
 
-app.MapPost("/CreateEmployee", (Employee employee) =>
+app.MapPost("/CreateEmployee", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")] (Employee employee) =>
 {
     if (!ValidateHomepage(employee.Homepage)) { return Results.Text("Homepage URL not valid!"); }
 
@@ -37,12 +94,12 @@ app.MapPost("/CreateEmployee", (Employee employee) =>
     return Results.Ok("User Created");
 });
 
-app.MapGet("GetEmplyees", () =>
+app.MapGet("GetEmplyees", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")] () =>
 {
     return employeeService.GetEmployees();
 });
 
-app.MapPut("/UpdateEmployee/{id}", (int id, Employee employee) =>
+app.MapPut("/UpdateEmployee/{id}", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")] (int id, Employee employee) =>
 {
     if (!ValidateHomepage(employee.Homepage)) { return Results.Text("Homepage URL not valid!"); }
     try
@@ -56,7 +113,7 @@ app.MapPut("/UpdateEmployee/{id}", (int id, Employee employee) =>
     }
 });
 
-app.MapDelete("/DeleteEmployee/{id}", (int id) =>
+app.MapDelete("/DeleteEmployee/{id}", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")] (int id) =>
 {
     try
     {
@@ -69,10 +126,45 @@ app.MapDelete("/DeleteEmployee/{id}", (int id) =>
     }
 });
 
-app.MapGet("/search", (SearchCriteria criteria) =>
+app.MapGet("/search", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")] (SearchCriteria criteria) =>
 {
     return Results.Ok(employeeService.Search(criteria));
 });
 
+IResult Login(UserLogin user, IUserService service)
+{
+    if (!string.IsNullOrEmpty(user.Username) &&
+        !string.IsNullOrEmpty(user.Password))
+    {
+        var loggedInUser = service.Get(user);
+        if (loggedInUser is null) return Results.NotFound("User not found");
+
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, loggedInUser.Username),
+            new Claim(ClaimTypes.Email, loggedInUser.EmailAddress),
+            new Claim(ClaimTypes.GivenName, loggedInUser.GivenName),
+            new Claim(ClaimTypes.Surname, loggedInUser.Surname),
+            new Claim(ClaimTypes.Role, loggedInUser.Role)
+        };
+
+        var token = new JwtSecurityToken
+        (
+            issuer: builder.Configuration["Jwt:Issuer"],
+            audience: builder.Configuration["Jwt:Audience"],
+            claims: claims,
+            expires: DateTime.UtcNow.AddDays(60),
+            notBefore: DateTime.UtcNow,
+            signingCredentials: new SigningCredentials(
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+                SecurityAlgorithms.HmacSha256)
+        );
+
+        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+        return Results.Ok(tokenString);
+    }
+    return Results.BadRequest("Invalid user credentials");
+}
 
 app.Run();
