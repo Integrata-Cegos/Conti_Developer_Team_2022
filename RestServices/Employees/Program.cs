@@ -1,4 +1,5 @@
 using Employees;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,6 +67,11 @@ app.MapDelete("/DeleteEmployee/{id}", (int id) =>
         //there have an exception to query data from the the Repository.
         return Results.Ok(new { ErrorMessage = $"{ex.Message} {ex.InnerException?.Message}" });
     }
+});
+
+app.MapGet("/search", (SearchCriteria criteria) =>
+{
+    return Results.Ok(employeeService.Search(criteria));
 });
 
 

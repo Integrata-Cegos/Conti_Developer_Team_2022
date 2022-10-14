@@ -62,4 +62,16 @@ public class EmployeeService
         }
     }
 
+    public List<Employee> Search (SearchCriteria searchcriteria)
+    {
+        List<Employee> searchresult = new List<Employee>();
+        searchresult.AddRange(DataBase.Where(x => x.Name == searchcriteria.Name));
+        searchresult.AddRange(DataBase.Where(x => x.FirstName == searchcriteria.FirstName));
+        searchresult.AddRange(DataBase.Where(x => x.LastName == searchcriteria.LastName));
+        searchresult.AddRange(DataBase.Where(x => x.Email == searchcriteria.Email));
+        searchresult.AddRange(DataBase.Where(x => x.Homepage == searchcriteria.Homepage));
+
+        return searchresult;
+    }
+
 }
