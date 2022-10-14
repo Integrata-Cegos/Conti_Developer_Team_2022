@@ -1,3 +1,5 @@
+using Employees;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,28 +18,55 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+EmployeeService employeeService = new();
 
-app.MapGet("/weatherforecast", () =>
+static bool ValidateHomepage(string homepage)
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    Uri uriResult;
+    return Uri.TryCreate(homepage, UriKind.Absolute, out uriResult)
+        && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+}
+
+app.MapPost("/CreateEmployee", (Employee employee) =>
+{
+    if (!ValidateHomepage(employee.Homepage)) { return Results.Text("Homepage URL not valid!"); }
+
+    employeeService.CreateEmployee(employee);
+
+    return Results.Ok("User Created");
+});
+
+app.MapGet("GetEmplyees", () =>
+{
+    return employeeService.GetEmployees();
+});
+
+app.MapPut("/UpdateEmployee/{id}", (int id, Employee employee) =>
+{
+    if (!ValidateHomepage(employee.Homepage)) { return Results.Text("Homepage URL not valid!"); }
+    try
+    {
+        return Results.Ok(employeeService.EditEmployee(id, employee));
+    }
+    catch (Exception ex)
+    {
+        //there have an exception to query data from the the Repository.
+        return Results.Ok(new { ErrorMessage = ex.Message });
+    }
+});
+
+app.MapDelete("/DeleteEmployee/{id}", (int id) =>
+{
+    try
+    {
+        return Results.Ok(employeeService.DeleteEmployee(id));
+    }
+    catch (Exception ex)
+    {
+        //there have an exception to query data from the the Repository.
+        return Results.Ok(new { ErrorMessage = $"{ex.Message} {ex.InnerException?.Message}" });
+    }
+});
+
 
 app.Run();
-
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
