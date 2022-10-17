@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI.REST", "WebAPI.REST\WebAPI.REST.csproj", "{A8BB837A-89FD-4416-BC7E-B476A6246A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employees", "Employees\Employees.csproj", "{2D4A5F34-ECD1-4D1D-8B47-14B098DD1812}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employees", "Employees\Employees.csproj", "{2D4A5F34-ECD1-4D1D-8B47-14B098DD1812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{8BEAC2D2-9692-4252-A81B-1AF24A139A48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2D4A5F34-ECD1-4D1D-8B47-14B098DD1812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D4A5F34-ECD1-4D1D-8B47-14B098DD1812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D4A5F34-ECD1-4D1D-8B47-14B098DD1812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEAC2D2-9692-4252-A81B-1AF24A139A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEAC2D2-9692-4252-A81B-1AF24A139A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEAC2D2-9692-4252-A81B-1AF24A139A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEAC2D2-9692-4252-A81B-1AF24A139A48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

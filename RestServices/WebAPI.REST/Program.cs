@@ -1,3 +1,4 @@
+using AutoMapper;
 using Employees;
 using Employees.Models;
 using Employees.Services;
@@ -10,8 +11,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using System.Security.Claims;
 using System.Text;
+using WebAPI.REST;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile(typeof(AutoMapperConfig));
+});
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
