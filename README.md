@@ -15,9 +15,4 @@
   * [Workshop](https://docs.google.com/presentation/d/1St1AfcJYZ7w21OYof2gMxUaQA02B_uxeEh4yYrwKLOo/edit?usp=sharing)
   * [__Dies und Das__](https://docs.google.com/presentation/d/1oWts4D703wTehf-974u4kNDyzvZBfNw1H4mlceKVd1M/edit?usp=sharing)
   
-* Workshop Zeiten
-  * Do./Fr. 8:30 - 16:45
-    * 8:30 - 9:00 Warmup
-    * 16:15 - 16:45 Nachbesprechung
-  * 9:00 - 16:15 eigenständiges Arbeiten
   
