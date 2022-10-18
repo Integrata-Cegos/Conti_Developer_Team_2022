@@ -12,7 +12,8 @@
   * [C# Grundlagen](https://docs.google.com/presentation/d/1poc2R5FUw8auH6l3fJuH-4JDB5i9XBdoY4PiCQrmAsI/edit?usp=sharing)
   * [Verteilte Anwendungen](https://docs.google.com/presentation/d/1TcEjyEeAZk95mVC2G4PMf3agRx43XpoqTcdScUjmDBM/edit?usp=sharing)
   * [Datenbanken](https://docs.google.com/presentation/d/1DxKOhjthwQvNxAD-cnpspJPYloFx4oz7Senosx_GHMY/edit?usp=sharing)
-  * [__Workshop__](https://docs.google.com/presentation/d/1St1AfcJYZ7w21OYof2gMxUaQA02B_uxeEh4yYrwKLOo/edit?usp=sharing)
+  * [Workshop](https://docs.google.com/presentation/d/1St1AfcJYZ7w21OYof2gMxUaQA02B_uxeEh4yYrwKLOo/edit?usp=sharing)
+  * [__Dies und Das__](https://docs.google.com/presentation/d/1oWts4D703wTehf-974u4kNDyzvZBfNw1H4mlceKVd1M/edit?usp=sharing)
   
 * Workshop Zeiten
   * Do./Fr. 8:30 - 16:45
